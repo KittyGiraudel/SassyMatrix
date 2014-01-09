@@ -1,14 +1,5 @@
 // Creating a matrix
-@import "functions/create-matrix";
-
-// Assigning values to matrix
-@import "functions/set-matrix-value";
-
-// Reading values from matrix
-@import "functions/get-matrix-value";
-
-// Displaying matrix
-@import "functions/display-matrix";
+@import "functions/matrix";
 
 // Getting number of rows in matrix
 @import "functions/rows";
@@ -21,3 +12,15 @@
 
 // Checking if matrix is diagonal
 @import "functions/is-diagonal";
+
+// Assigning values to matrix
+@import "functions/set-value";
+
+// Swapping two values from matrix
+@import "functions/swap-values";
+
+// Reading values from matrix
+@import "functions/get-value";
+
+// Displaying matrix
+@import "functions/display";
