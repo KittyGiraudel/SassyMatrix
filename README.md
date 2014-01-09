@@ -4,10 +4,14 @@ All you ever wanted to deal with matrices in Sass.
 
 ## What's in there?
 
-* `create-matrix($x, $y)`: create a matrix of `$x` lines by `$y` columns
-* `set-matrix-entry($matrix, $x, $y, $value)`: set `$value` at `$matrix[$x, $y]`
-* `get-matrix-entry($matrix, $x, $y)`: get value at `$matrix[$x, $y]`
-* `display-matrix($matrix)`: display matrix
+* `matrix($x, $y)`: create a matrix of `$x` lines by `$y` columns
+* `set-value($matrix, $x, $y, $value)`: set `$value` at `$matrix[$x, $y]`
+* `get-value($matrix, $x, $y)`: get value at `$matrix[$x, $y]`
+* `display($matrix)`: display matrix
+* `columns($matrix)`: return number of columns in `$matrix`
+* `rows($matrix)`: return number of rows in `$matrix`
+* `is-square($matrix)`: return wether `$matrix` has as many rows as columns
+* `is-diagonal($matrix)`: checks wether all values from the main diagonal of `$matrix` are set while all other values are equal to the dummy one (0)
 
 ## Requirements
 

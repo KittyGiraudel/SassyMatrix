@@ -9,3 +9,15 @@
 
 // Displaying matrix
 @import "functions/display-matrix";
+
+// Getting number of rows in matrix
+@import "functions/rows";
+
+// Getting number of columns in matrix
+@import "functions/columns";
+
+// Checking if matrix is square
+@import "functions/is-square";
+
+// Checking if matrix is diagonal
+@import "functions/is-diagonal";

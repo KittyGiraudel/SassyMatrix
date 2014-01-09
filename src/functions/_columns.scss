@@ -1,0 +1,9 @@
+// Returns number of columns in `$matrix`
+//
+// @param $matrix: matrix
+//
+// @return number
+
+@function rows($matrix) {
+  @return length(nth($matrix, 1));
+}
