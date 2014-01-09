@@ -1,0 +1,19 @@
+// Initializing a matrix of `$x` by `$y` with dummy `$value`
+//
+// @param $x: number of lines
+// @param $y: number of columns
+// @param $value: dummy value to use
+//
+// @return matrix
+//
+@function create-matrix($x, $y, $value: _) {
+  $matrix: ();
+  @for $i from 1 through $x {
+    $tmp: ();
+    @for $y from 1 through $y {
+      $tmp: append($tmp, $value)
+    }
+    $matrix: append($matrix, $tmp);
+  }
+  @return $matrix;
+}

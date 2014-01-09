@@ -1,0 +1,12 @@
+// Assign `$value` at `$matrix[$x, $y]`
+//
+// @param $matrix: matrix to update
+// @param $x: x coord
+// @param $y: y coord
+// @param $value: value to assign at $matrix[$x, $y]
+//
+// @return updated $matrix
+
+@function set-matrix-value($matrix, $x, $y, $value) {
+  @return set-nth($matrix, $x, set-nth(nth($matrix, $x), $y, $value));
+}

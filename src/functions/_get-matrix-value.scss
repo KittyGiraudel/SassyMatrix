@@ -1,0 +1,11 @@
+// Returns value at `$matrix[$x, $y]`
+//
+// @param $matrix: matrix
+// @param $x: x coord
+// @param $y: y coord
+//
+// @return literal
+
+@function get-matrix-value($matrix, $x, $y) {
+  @return nth(nth($matrix, $x), $y);
+}
