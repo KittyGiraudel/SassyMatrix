@@ -1,9 +1,9 @@
 // Returns value at `$matrix[$x, $y]`
-//
+// --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $x: x coord
 // @param $y: y coord
-//
+// --------------------------------------------------------------------------------
 // @return literal
 
 @function get-value($matrix, $x, $y) {

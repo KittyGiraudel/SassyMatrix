@@ -4,7 +4,8 @@ All you ever wanted to deal with matrices in Sass.
 
 ## What's in there?
 
-* `matrix($x, $y)`: create a matrix of `$x` rows by `$y` columns
+* `matrix($x, $y: $x, $dummy: 0)`: create a matrix of `$x` rows by `$y` columns with `$dummy` as a filler
+* `unit-matrix($x, $y, $value, $dummy: 0)`: create a matrix of `$x` rows by `$y` columns with `$dummy` as a filler except for diagonal which uses `$value`
 * `set-value($matrix, $x, $y, $value)`: set `$value` at `$matrix[$x, $y]`
 * `get-value($matrix, $x, $y)`: get value at `$matrix[$x, $y]`
 * `display($matrix)`: display matrix

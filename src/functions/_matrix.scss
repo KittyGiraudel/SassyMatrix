@@ -1,17 +1,17 @@
 // Initializing a matrix of `$x` by `$y` with dummy `$value`
-//
-// @param $x: number of lines
+// --------------------------------------------------------------------------------
+// @param $x: number of rows
 // @param $y: number of columns
-// @param $value: dummy value to use
-//
+// @param $dummy: dummy value to use
+// --------------------------------------------------------------------------------
 // @return matrix
 
-@function matrix($x, $y: $x, $value: 0) {
+@function matrix($x, $y: $x, $dummy: 0) {
   $matrix: ();
   @for $i from 1 through $x {
     $tmp: ();
     @for $y from 1 through $y {
-      $tmp: append($tmp, $value)
+      $tmp: append($tmp, $dummy)
     }
     $matrix: append($matrix, $tmp);
   }
