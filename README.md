@@ -8,3 +8,7 @@ All you ever wanted to deal with matrices in Sass.
 * `set-matrix-entry($matrix, $x, $y, $value)`: set `$value` at `$matrix[$x, $y]`
 * `get-matrix-entry($matrix, $x, $y)`: get value at `$matrix[$x, $y]`
 * `display-matrix($matrix)`: display matrix
+
+## Requirements
+
+All you need is a clean version of Sass 3.3. Otherwise it's just pure Sass madness.
