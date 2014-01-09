@@ -6,7 +6,7 @@
 //
 // @return matrix
 //
-@function create-matrix($x, $y, $value: 0) {
+@function create-matrix($x, $y: $x, $value: 0) {
   $matrix: ();
   @for $i from 1 through $x {
     $tmp: ();
