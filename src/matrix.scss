@@ -1,5 +1,11 @@
+// Validate coordinates pairs
+@import "functions/helpers/valid-coords";
+
 // Creating a matrix
 @import "functions/matrix";
+
+// Creating a matrix with diagonal filled
+@import "functions/unit-matrix";
 
 // Getting number of rows in matrix
 @import "functions/rows";
@@ -14,13 +20,13 @@
 @import "functions/is-diagonal";
 
 // Assigning values to matrix
-@import "functions/set-value";
+@import "functions/set-entry";
 
 // Swapping two values from matrix
-@import "functions/swap-values";
+@import "functions/swap-entries";
 
 // Reading values from matrix
-@import "functions/get-value";
+@import "functions/get-entry";
 
 // Displaying matrix
 @import "functions/display";

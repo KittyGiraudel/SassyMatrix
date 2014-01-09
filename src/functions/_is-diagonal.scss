@@ -1,7 +1,7 @@
-// Checks wether all values from the main diagonal of `$matrix`
-// are set while all other values are equal to the dummy one (0)
+// Checks wether all entries from the main diagonal of `$matrix`
+// are set while all other entries are equal to the dummy one (0)
 // --------------------------------------------------------------------------------
-// @require `get-value`
+// @require `get-entry`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $value: dummy value for empty cells
@@ -11,7 +11,7 @@
 @function is-diagonal($matrix, $value: 0) {
   @for $i from 1 through length($matrix) {
     @for $j from 1 through length(nth($matrix, 1)) {
-      @if $i != $j and get-value($matrix, $i, $j) != $value {
+      @if $i != $j and get-entry($matrix, ($i $j)) != $value {
         @return false;
       }
     }

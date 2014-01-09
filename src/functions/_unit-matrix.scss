@@ -2,7 +2,7 @@
 // with `$value` to fill diagonal and `$dummy` to fill empty cells
 // --------------------------------------------------------------------------------
 // @require `create-matrix`
-// @require `set-value`
+// @require `set-entry`
 // --------------------------------------------------------------------------------
 // @param $x: number of rows
 // @param $y: number of columns
@@ -11,12 +11,12 @@
 // --------------------------------------------------------------------------------
 // @return matrix
 
-@function unit-matrix($x, $y, $value, $dummy: 0) {
+@function unit-matrix($x, $y, $value: 1, $dummy: 0) {
   $matrix: create-matrix($x, $y, $dummy);
   @for $i from 1 through $x {
     @for $j from 1 through $y {
       @if $i == $j {
-        $matrix: set-value($matrix, $i, $j, $value);
+        $matrix: set-entry($matrix, ($x $y), $value);
       }
     }
   }

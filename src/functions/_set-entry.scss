@@ -1,0 +1,16 @@
+// Assign `$value` at `$matrix[$coords[1], $coords[2]]`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix to update
+// @param $coords: (x y) coordinates
+// @param $value: value to assign at $matrix[$x, $y]
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function set-entry($matrix, $coords, $value) {
+  @if not valid-coords($coords) {
+    @warn "Invalid coords.";
+    @return false;
+  }
+  
+  @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
+}

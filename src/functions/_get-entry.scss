@@ -1,0 +1,15 @@
+// Returns entry at `$matrix[$coords[1], $coords[2]]`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $coords: (x y) coordinates
+// --------------------------------------------------------------------------------
+// @return literal
+
+@function get-entry($matrix, $coords) {
+  @if not valid-coords($coords) {
+    @warn "Invalid coords.";
+    @return false;
+  }
+
+  @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
+}

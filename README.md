@@ -6,10 +6,10 @@ All you ever wanted to deal with matrices in Sass.
 
 * `matrix($x, $y: $x, $dummy: 0)`: create a matrix of `$x` rows by `$y` columns with `$dummy` as a filler
 * `unit-matrix($x, $y, $value, $dummy: 0)`: create a matrix of `$x` rows by `$y` columns with `$dummy` as a filler except for diagonal which uses `$value`
-* `set-value($matrix, $x, $y, $value)`: set `$value` at `$matrix[$x, $y]`
-* `get-value($matrix, $x, $y)`: get value at `$matrix[$x, $y]`
+* `set-entry($matrix, $coords, $value)`: set `$value` at `$matrix[$coords[1], $coords[2]]`
+* `get-entry($matrix, $coords)`: get entry at `$matrix[$coords[1], $coords[2]]`
 * `display($matrix)`: display matrix
-* `swap-values($matrix, $a, $b)`: swaps values `$a` and `$b` from `$matrix`
+* `swap-entries($matrix, $a, $b)`: swaps values `$a` and `$b` from `$matrix`
 * `columns($matrix)`: return number of columns in `$matrix`
 * `rows($matrix)`: return number of rows in `$matrix`
 * `is-square($matrix)`: return wether `$matrix` has as many rows as columns
