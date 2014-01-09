@@ -1,0 +1,14 @@
+// Swaps rows `$r1` and `$r2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $r1: index of rows 1
+// @param $r2: index of rows 2
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-rows($matrix, $r1, $r2) {
+  $tmp: nth($matrix, $r1);
+  $matrix: set-nth($matrix, $r1, nth($matrix, $r2));
+  $matrix: set-nth($matrix, $r2, $tmp);
+  @return $matrix;
+}
