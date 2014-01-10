@@ -1,0 +1,21 @@
+@mixin describe($bc-describe-new) {
+  @if not $bc-skipping {
+    $bc-describe-old: $bc-describe !global;
+
+    @if $bc-describe-depth > 0 {
+      $bc-describe: "#{$bc-describe-old} #{$bc-describe-new}" !global;
+    } @else {
+      $bc-describe: "#{$bc-describe-new}" !global;
+    }
+
+    $bc-describe-depth: $bc-describe-depth + 1 !global;
+
+    @content;
+
+    $bc-describe:       $bc-describe-old !global;
+    $bc-describe-depth: $bc-describe-depth - 1 !global;
+
+  } @else {
+    @content;
+  }
+}

@@ -15,8 +15,7 @@
     @return false;
   }
 
-  $tmp: get-entry($matrix, $e1);
-  $matrix: set-entry($matrix, $e1, get-entry($matrix, $e2));
-  $matrix: set-entry($matrix, $e2, $tmp);
+  $tmp: get-entry($matrix, $a);
+  $matrix: set-entry(set-entry($matrix, $a, get-entry($matrix, $b)), $b, $tmp);
   @return $matrix;
 }
