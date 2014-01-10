@@ -22,7 +22,7 @@
 // @param $matrix: matrix to display
 // @param $pseudo: pseudo element to use
 
-@mixin display-matrix($matrix, $pseudo: before) {
+@mixin display($matrix, $pseudo: before) {
     body:#{$pseudo} {
         content: display($matrix)                 !important;
 

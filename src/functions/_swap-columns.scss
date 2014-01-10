@@ -1,0 +1,18 @@
+// Swaps columns `$c1` and `$c2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `get-entry`
+// @require `set-entry`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $c1: index of column 1
+// @param $c2: index of column 2
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-columns($matrix, $c1, $c2) {
+  @for $i from 1 through columns($matrix) {
+    $tmp: get-entry($matrix, ($i $c1));
+    $matrix: set-entry(set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2))), ($i $c2), $tmp);
+  }
+  @return $matrix;
+}

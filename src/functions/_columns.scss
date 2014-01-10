@@ -4,6 +4,6 @@
 // --------------------------------------------------------------------------------
 // @return number
 
-@function rows($matrix) {
+@function columns($matrix) {
   @return length(nth($matrix, 1));
 }
