@@ -21,6 +21,7 @@ All you ever wanted to deal with matrices in Sass.
 * `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
 * `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 * `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
+* `transpose($matrix)`: rotates `$matrix` around its diagonal
 
 ### Checking for matrix properties
 * `columns($matrix)`: return number of columns in `$matrix`

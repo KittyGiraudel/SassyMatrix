@@ -19,14 +19,23 @@
 // Assigning values to matrix
 @import "functions/set-entry";
 
-// Swapping two values from matrix
-@import "functions/swap-entries";
-
 // Reading values from matrix
 @import "functions/get-entry";
 
 // Displaying matrix
 @import "functions/display";
+
+// Swapping two values from matrix
+@import "functions/swap-entries";
+
+// Swapper two rows from matrix
+@import "functions/swap-rows";
+
+// Swapper two columns from matrix
+@import "functions/swap-columns";
+
+// Checking if all values from matrix are numbers
+@import "functions/checkers/is-numeric";
 
 // Checking if matrix is square
 @import "functions/checkers/is-square";
