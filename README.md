@@ -27,11 +27,11 @@ All you ever wanted to deal with matrices in Sass.
 ### Checking for matrix properties
 * `columns($matrix)`: return number of columns in `$matrix`
 * `rows($matrix)`: return number of rows in `$matrix`
-* `is-numeric($matrix)`: check wether `$matrix` has only numeric values
-* `is-square($matrix)`: check wether `$matrix` has as many rows as columns
-* `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
-* `is-lower-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
-* `is-upper-triangular($matrix, $flag: null)`: check wether all value above `$matrix` diagonal are equal to 0
+* `is-numeric($matrix)`: check whether `$matrix` has only numeric values
+* `is-square($matrix)`: check whether `$matrix` has as many rows as columns
+* `is-diagonal($matrix)`: check whether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
+* `is-lower-triangular($matrix, $flag: null)`: check whether all value below `$matrix` diagonal are equal to 0
+* `is-upper-triangular($matrix, $flag: null)`: check whether all value above `$matrix` diagonal are equal to 0
 
 ## Requirements
 
