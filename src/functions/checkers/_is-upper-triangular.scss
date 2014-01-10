@@ -1,0 +1,12 @@
+// Checks wether `$matrix` is upper triangular with `$flag` option
+// --------------------------------------------------------------------------------
+// @require `helper/is-triangular`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $flag: advanced option (null | strict | unit | atom)
+// --------------------------------------------------------------------------------
+// @return boolean
+
+@function is-upper-triangular($matrix, $flag: null) {
+  @return _is-triangular($matrix, bottom, $flag);
+}

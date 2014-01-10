@@ -1,6 +1,9 @@
 // Validate coordinates pairs
 @import "functions/helpers/valid-coords";
 
+// Is triangular helper
+@import "functions/helpers/is-triangular";
+
 // Creating a matrix
 @import "functions/matrix";
 
@@ -13,12 +16,6 @@
 // Getting number of columns in matrix
 @import "functions/columns";
 
-// Checking if matrix is square
-@import "functions/is-square";
-
-// Checking if matrix is diagonal
-@import "functions/is-diagonal";
-
 // Assigning values to matrix
 @import "functions/set-entry";
 
@@ -30,3 +27,15 @@
 
 // Displaying matrix
 @import "functions/display";
+
+// Checking if matrix is square
+@import "functions/checkers/is-square";
+
+// Checking if matrix is diagonal
+@import "functions/checkers/is-diagonal";
+
+// Checking if matrix is diagonal
+@import "functions/checkers/is-upper-triangular";
+
+// Checking if matrix is diagonal
+@import "functions/checkers/is-lower-triangular";

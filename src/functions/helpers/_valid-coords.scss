@@ -1,4 +1,4 @@
-@function valid-coords($coords) {
+@function _valid-coords($coords) {
   @if length($coords) != 2 {
     @return false;
   }

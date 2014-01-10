@@ -10,7 +10,7 @@
 // @return $matrix
 
 @function swap-entries($matrix, $a, $b) {
-  @if not valid-coords($a) or not valid-coords($b) {
+  @if not _valid-coords($a) or not _valid-coords($b) {
     @warn "Invalid coords.";
     @return false;
   }

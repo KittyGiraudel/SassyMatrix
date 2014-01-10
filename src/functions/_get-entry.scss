@@ -6,7 +6,7 @@
 // @return literal
 
 @function get-entry($matrix, $coords) {
-  @if not valid-coords($coords) {
+  @if not _valid-coords($coords) {
     @warn "Invalid coords.";
     @return false;
   }

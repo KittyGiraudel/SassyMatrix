@@ -1,22 +1,19 @@
-// Initializing a matrix of `$x` by `$y`
-// with `$value` to fill diagonal and `$dummy` to fill empty cells
+// Initializing a matrix of `$x` by `$y` with its diagonal filled with 1s
 // --------------------------------------------------------------------------------
 // @require `matrix`
 // @require `set-entry`
 // --------------------------------------------------------------------------------
 // @param $x: number of rows
 // @param $y: number of columns
-// @param $value: value to use to fill diagonal
-// @param $dummy: value to use to fill empty cell
 // --------------------------------------------------------------------------------
 // @return matrix
 
-@function unit-matrix($x, $y: $x, $value: 1, $dummy: 0) {
-  $matrix: matrix($x, $y, $dummy);
+@function unit-matrix($x, $y: $x) {
+  $matrix: matrix($x, $y);
   @for $i from 1 through $x {
     @for $j from 1 through $y {
       @if $i == $j {
-        $matrix: set-entry($matrix, ($i $j), $value);
+        $matrix: set-entry($matrix, ($i $j), 1);
       }
     }
   }

@@ -7,10 +7,10 @@
 // @return matrix
 
 @function set-entry($matrix, $coords, $value) {
-  @if not valid-coords($coords) {
+  @if not _valid-coords($coords) {
     @warn "Invalid coords.";
     @return false;
   }
-  
+
   @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
 }

@@ -1,0 +1,12 @@
+// Returns wether `$matrix` has as many rows as columns
+// --------------------------------------------------------------------------------
+// @require `columns`
+// @require `rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// --------------------------------------------------------------------------------
+// @return boolean
+
+@function is-square($matrix) {
+  @return columns($matrix) == rows($matrix);
+}
