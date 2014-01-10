@@ -1,26 +1,33 @@
-// Add numeric matrices
+// Add `$matrices`
 // --------------------------------------------------------------------------------
 // @require `rows`
 // @require `columns`
 // @require `get-entry`
 // @require `set-entry`
 // --------------------------------------------------------------------------------
-// @param $matrix1: first matrix
-// @param $matrix2: second matrix
+// @param $matrices: matrices
 // --------------------------------------------------------------------------------
 // @return matrix
 
-@function add-matrices($matrix1, $matrix2) {
-  @if rows($matrix1) != rows($matrix2)
-  or columns($matrix1) != columns($matrix2) {
-    @return false;
-  }
-
-  @for $i from 1 through rows($matrix1) {
-    @for $j from 1 through rows($matrix2) {
-      $value: get-entry($matrix1, ($i $j)) + get-entry($matrix2, ($i $j));
-      $matrix1: set-entry($matrix1, ($i $j), $value);
+@function add-matrices($matrices...) {
+  $matrix: nth($matrices, 1);
+  @each $m in $matrices {
+    @if columns($matrix) != columns($m)
+    or rows($matrix) != rows($m) {
+      @warn "All matrices do not have same dimensions.";
+      @return false;
     }
   }
-  @return $matrix1;
+
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      $value: null;
+      @each $m in $matrices {
+        $entry: get-entry($m, ($i $j));
+        $value: if($value == null, $entry, $value + $entry);
+      }
+      $matrix: set-entry($matrix, ($i $j), $value);
+    }
+  }
+  @return $matrix;
 }
