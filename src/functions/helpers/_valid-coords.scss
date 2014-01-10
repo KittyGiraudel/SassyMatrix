@@ -5,4 +5,5 @@
   @if type-of(nth($coords, 1)) != number or type-of(nth($coords, 2)) != number {
     @return false;
   }
+  @return true;
 }

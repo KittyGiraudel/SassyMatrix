@@ -18,7 +18,7 @@ All you ever wanted to deal with matrices in Sass.
 * `display($matrix)`: display matrix
 
 ### Altering matrix
-* `swap-entries($matrix, $e1, $e2)`: swaps values `$a` and `$b` from `$matrix`
+* `swap-entries($matrix, $e1, $e2)`: swaps values `$e1` and `$e2` from `$matrix`
 * `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 * `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
 
