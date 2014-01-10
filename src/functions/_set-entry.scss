@@ -1,5 +1,8 @@
 // Assign `$value` at `$matrix[$coords[1], $coords[2]]`
 // --------------------------------------------------------------------------------
+// @require `rows`
+// @require `columns`
+// --------------------------------------------------------------------------------
 // @param $matrix: matrix to update
 // @param $coords: (x y) coordinates
 // @param $value: value to assign at $matrix[$x, $y]
@@ -9,6 +12,11 @@
 @function set-entry($matrix, $coords, $value) {
   @if not _valid-coords($coords) {
     @warn "Invalid coords.";
+    @return false;
+  }
+
+  @if nth($coords, 1) > rows($matrix) or nth($coords, 2) > columns($matrix) {
+    @warn "Out of bounds coords.";
     @return false;
   }
 

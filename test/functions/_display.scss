@@ -1,0 +1,5 @@
+@include describe("The display function") {
+  @include it("should return the matrix as a string") {
+    @include should(expect(display(matrix(3))), to(equal(" 0 0 0\A  0 0 0\A  0 0 0\A ")));
+  }
+}

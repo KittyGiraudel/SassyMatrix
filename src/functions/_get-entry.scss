@@ -1,5 +1,8 @@
 // Returns entry at `$matrix[$coords[1], $coords[2]]`
 // --------------------------------------------------------------------------------
+// @require `rows`
+// @require `columns`
+// --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $coords: (x y) coordinates
 // --------------------------------------------------------------------------------
@@ -8,6 +11,11 @@
 @function get-entry($matrix, $coords) {
   @if not _valid-coords($coords) {
     @warn "Invalid coords.";
+    @return false;
+  }
+
+  @if nth($coords, 1) > rows($matrix) or nth($coords, 2) > columns($matrix) {
+    @warn "Out of bounds coords.";
     @return false;
   }
 
