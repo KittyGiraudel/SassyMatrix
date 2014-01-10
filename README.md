@@ -22,10 +22,12 @@ All you ever wanted to deal with matrices in Sass.
 * `swap-rows($matrix, $r1, $r2)`: swaps rows `$r1` and `$r2` from `$matrix`
 * `swap-columns($matrix, $c1, $c2)`: swaps columns `$c1` and `$c2` from `$matrix`
 * `transpose($matrix)`: rotates `$matrix` around its diagonal
+* `add-matrices($matrix1, $matrix2)`: add `$matrix1` and `$matrix2`
 
 ### Checking for matrix properties
 * `columns($matrix)`: return number of columns in `$matrix`
 * `rows($matrix)`: return number of rows in `$matrix`
+* `is-numeric($matrix)`: check wether `$matrix` has only numeric values
 * `is-square($matrix)`: check wether `$matrix` has as many rows as columns
 * `is-diagonal($matrix)`: check wether all values from the main diagonal of `$matrix` are set while all other values are equal to 0
 * `is-lower-triangular($matrix, $flag: null)`: check wether all value below `$matrix` diagonal are equal to 0
