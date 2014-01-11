@@ -11,12 +11,12 @@
 
 @function set-entry($matrix, $coords, $value) {
   @if not _valid-coords($coords) {
-    @warn "Invalid coords.";
+    @warn "Invalid coords (#{$coords}).";
     @return false;
   }
 
-  @if nth($coords, 1) > rows($matrix) or nth($coords, 2) > columns($matrix) {
-    @warn "Out of bounds coords.";
+  @if abs(nth($coords, 1)) > rows($matrix) or abs(nth($coords, 2)) > columns($matrix) {
+    @warn "Out of bounds coords (#{nth($coords, 1)}:#{nth($coords, 2)}).";
     @return false;
   }
 

@@ -17,12 +17,12 @@
 @import "functions/add-matrices";
 @import "functions/transpose";
 @import "functions/add-row";
-@import "functions/add-column";
 @import "functions/checkers/is-square";
 @import "functions/checkers/is-numeric";
 @import "functions/checkers/is-diagonal";
 @import "functions/helpers/is-triangular";
 @import "functions/checkers/is-lower-triangular";
 @import "functions/checkers/is-upper-triangular";
+@import "functions/add-column";
 
 @include runner-end;

@@ -15,4 +15,8 @@
     @include should(expect(add-row(matrix(3), (1 2))), to(equal(false)));
     @include should(expect(add-row(matrix(3), (1 2 3 4))), to(equal(false)));
   }
+
+  @include it("should insert new column at index if index is given") {
+    @include should(expect(add-row(matrix(3), (1 2 3), 1)), to(equal((1 2 3) (0 0 0) (0 0 0) (0 0 0))));
+  }
 }

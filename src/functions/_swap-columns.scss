@@ -22,9 +22,10 @@
     @return false;
   }
 
-  @for $i from 1 through columns($matrix) {
+  @for $i from 1 through rows($matrix) {
     $tmp: get-entry($matrix, ($i $c1));
-    $matrix: set-entry(set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2))), ($i $c2), $tmp);
+    $matrix: set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2)));
+    $matrix: set-entry($matrix, ($i $c2), $tmp);
   }
 
   @return $matrix;

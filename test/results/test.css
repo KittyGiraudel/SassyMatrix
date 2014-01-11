@@ -1,13 +1,33 @@
 @charset "CP850";
 /* >> Bootcamp >> */
+/* line 7, ../bootcamp/core/mixins/_it.scss */
+The add-column function should add a new column to matrix {
+  ✗: Expected 4 to equal 2;
+  Test: Failed;
+}
+
+/* line 7, ../bootcamp/core/mixins/_it.scss */
+The add-column function should add the new column if column is specified {
+  ✗: Expected 0 to equal 1;
+  ✗: Expected 0 to equal 2;
+  ✗: Expected 0 to equal 3;
+  Test: Failed;
+}
+
+/* line 7, ../bootcamp/core/mixins/_it.scss */
+The add-column function should insert new column at index if index is given {
+  ✗: Expected false to equal ( ( 1, 0, 0, 0 ), ( 2, 0, 0, 0 ), ( 3, 0, 0, 0 ) );
+  Test: Failed;
+}
+
 /* line 11, ../bootcamp/core/mixins/_runner.scss */
 Test Results {
-  Success: true;
-  Stats:  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔;
-  Tests: 49;
-  Asserts: 145;
-  Passed: 49;
-  Failed: 0;
+  Success: false;
+  Stats:  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✗ ✔ ✗ ✔ ✗;
+  Tests: 51;
+  Asserts: 147;
+  Passed: 48;
+  Failed: 3;
   Skipped: 0;
 }
 

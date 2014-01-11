@@ -1,13 +1,16 @@
-// Add a new `$column` to `$matrix`
+// Add a new `$column` to `$matrix` at `$index`
+// --------------------------------------------------------------------------------
+// @require `swap-columns`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $column: column to add
+// @param $index: index to add column at
 // --------------------------------------------------------------------------------
 // @return matrix
 
-@function add-column($matrix, $column: ()) {
+@function add-column($matrix, $column: (), $index: null) {
   $desired-length: length($matrix);
-  
+
   @if $column == () {
     @for $i from 1 through $desired-length {
       $column: append($column, 0);
@@ -21,6 +24,10 @@
   
   @for $i from 1 through $desired-length {
     $matrix: set-nth($matrix, $i, append(nth($matrix, $i), nth($column, $i)));
+  }
+
+  @if $index != null {
+    $matrix: swap-columns($matrix, -1, $index);
   }
   
   @return $matrix;
