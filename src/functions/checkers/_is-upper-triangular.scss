@@ -8,5 +8,5 @@
 // @return boolean
 
 @function is-upper-triangular($matrix, $flag: null) {
-  @return _is-triangular($matrix, bottom, $flag);
+  @return _is-triangular($matrix, top, $flag);
 }

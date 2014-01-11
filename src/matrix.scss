@@ -1,9 +1,6 @@
 // Validate coordinates pairs
 @import "functions/helpers/valid-coords";
 
-// Is triangular helper
-@import "functions/helpers/is-triangular";
-
 // Creating a matrix
 @import "functions/matrix";
 
@@ -42,6 +39,9 @@
 
 // Checking if matrix is diagonal
 @import "functions/checkers/is-diagonal";
+
+// Is triangular helper
+@import "functions/helpers/is-triangular";
 
 // Checking if matrix is diagonal
 @import "functions/checkers/is-upper-triangular";

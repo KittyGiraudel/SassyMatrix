@@ -19,5 +19,8 @@
 @import "functions/checkers/is-square";
 @import "functions/checkers/is-numeric";
 @import "functions/checkers/is-diagonal";
+@import "functions/helpers/is-triangular";
+@import "functions/checkers/is-lower-triangular";
+@import "functions/checkers/is-upper-triangular";
 
 @include runner-end;
