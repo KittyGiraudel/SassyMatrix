@@ -1,0 +1,6 @@
+@include describe("The is-numeric function") {
+  @include it("should return whether the matrix has only numeric values in it") {
+    @include should(expect(is-numeric(matrix(3))), to(equal(true)));
+    @include should(expect(is-numeric((1 a) (2 b))), to(equal(false)));
+  }
+}

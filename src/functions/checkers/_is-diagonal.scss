@@ -12,7 +12,8 @@
 @function is-diagonal($matrix) {
   @for $i from 1 through rows($matrix) {
     @for $j from 1 through columns($matrix) {
-      @if $i != $j and get-entry($matrix, ($i $j)) != 0 {
+      $entry: get-entry($matrix, ($i $j));
+      @if ($i != $j and $entry != 0) or ($i == $j and $entry == 0) {
         @return false;
       }
     }

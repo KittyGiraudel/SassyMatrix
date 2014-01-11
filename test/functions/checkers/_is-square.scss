@@ -1,0 +1,8 @@
+@include describe("The is-square function") {
+  @include it("should return whether the matrix has as many rows as columns") {
+    @include should(expect(is-square(matrix(3))), to(equal(true)));
+    @include should(expect(is-square(matrix(3, 3))), to(equal(true)));
+    @include should(expect(is-square(matrix(3, 2))), to(equal(false)));
+    @include should(expect(is-square(matrix(2, 3))), to(equal(false)));
+  }
+}

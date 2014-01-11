@@ -1,0 +1,11 @@
+@include describe("The valid-coords function") {
+  @include it("should return false if length of coords is not 2") {
+    @include should(expect(_valid-coords(1)), to(equal(false)));
+    @include should(expect(_valid-coords(1 2 3)), to(equal(false)));
+  }
+
+  @include it("should return false if coords are not numbers") {
+    @include should(expect(_valid-coords(a b)), to(equal(false)));
+    @include should(expect(_valid-coords(false true)), to(equal(false)));
+  }
+}

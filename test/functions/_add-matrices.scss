@@ -1,0 +1,32 @@
+@include describe("The add-matrices function") {
+  $matrix-1: (
+    (1 2 3)
+    (4 5 6)
+    (7 8 9)
+  );
+
+  $matrix-2: (
+    (9 8 7)
+    (6 5 4)
+    (3 2 1)
+  );
+
+  $matrix-3: (
+    (a b c)
+    (d e f)
+    (g h i)
+  );
+
+  @include it("should return false if matrices do not have same dimensions") {
+    @include should(expect(add-matrices(matrix(3), matrix(3))), to(equal(matrix(3))));
+    @include should(expect(add-matrices(matrix(3), matrix(2))), to(equal(false)));
+    @include should(expect(add-matrices(matrix(3), matrix(3), matrix(2))), to(equal(false)));
+  }
+
+  @include it("should add values at each position to value of first matrix") {
+    @include should(expect(add-matrices($matrix-1, $matrix-2)), to(equal((10 10 10) (10 10 10) (10 10 10))));
+    @include should(expect(add-matrices($matrix-1, $matrix-3)), to(equal(('1a' '2b' '3c') ('4d' '5e' '6f') ('7g' '8h' '9i'))));
+    @include should(expect(add-matrices($matrix-1, $matrix-2, $matrix-3)), to(equal(('10a' '10b' '10c') ('10d' '10e' '10f') ('10g' '10h' '10i'))));
+    @include should(expect(add-matrices($matrix-1, $matrix-3, $matrix-2)), to(equal(('1a9' '2b8' '3c7') ('4d6' '5e5' '6f4') ('7g3' '8h2' '9i1'))));
+  }
+}

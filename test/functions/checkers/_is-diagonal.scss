@@ -1,0 +1,7 @@
+@include describe("The is-diagonal function") {
+  @include it("should return whether the matrix has only its diagonal defined") {
+    @include should(expect(is-diagonal(matrix(3))), to(equal(false)));
+    @include should(expect(is-diagonal(unit-matrix(3))), to(equal(true)));
+    @include should(expect(is-diagonal((0 1) (1 0))), to(equal(false)));
+  }
+}

@@ -3,6 +3,7 @@
 
 @include runner-start;
 
+@import "functions/helpers/valid-coords";
 @import "functions/matrix";
 @import "functions/unit-matrix";
 @import "functions/columns";
@@ -10,5 +11,13 @@
 @import "functions/display";
 @import "functions/get-entry";
 @import "functions/set-entry";
+@import "functions/swap-entries";
+@import "functions/swap-columns";
+@import "functions/swap-rows";
+@import "functions/add-matrices";
+@import "functions/transpose";
+@import "functions/checkers/is-square";
+@import "functions/checkers/is-numeric";
+@import "functions/checkers/is-diagonal";
 
 @include runner-end;
