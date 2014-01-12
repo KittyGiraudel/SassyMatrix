@@ -72,7 +72,10 @@ module.exports = function(grunt) {
     // Watch
     watch: {
       dist: {
-        files: ['./test/**/*.scss'],
+        files: [
+                './test/**/*.scss',
+                './src/**/*.scss'
+                ],
         tasks: ['test']
       }
     }
