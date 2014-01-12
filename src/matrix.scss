@@ -2,34 +2,40 @@
 @import "functions/helpers/valid-coords";
 
 // Creating a matrix
-@import "functions/matrix";
+@import "functions/init/matrix";
 
 // Creating a matrix with diagonal filled
-@import "functions/unit-matrix";
+@import "functions/init/unit-matrix";
 
 // Getting number of rows in matrix
-@import "functions/rows";
+@import "functions/misc/rows";
 
 // Getting number of columns in matrix
-@import "functions/columns";
+@import "functions/misc/columns";
 
 // Assigning values to matrix
-@import "functions/set-entry";
+@import "functions/setters/set-entry";
 
 // Reading values from matrix
-@import "functions/get-entry";
+@import "functions/getters/get-entry";
+
+// Reading values from matrix
+@import "functions/getters/get-row";
+
+// Reading values from matrix
+@import "functions/getters/get-column";
 
 // Displaying matrix
-@import "functions/display";
+@import "functions/misc/display";
 
 // Swapping two values from matrix
-@import "functions/swap-entries";
+@import "functions/swap/swap-entries";
 
 // Swapper two rows from matrix
-@import "functions/swap-rows";
+@import "functions/swap/swap-rows";
 
 // Swapper two columns from matrix
-@import "functions/swap-columns";
+@import "functions/swap/swap-columns";
 
 // Checking if all values from matrix are numbers
 @import "functions/checkers/is-numeric";
@@ -50,13 +56,13 @@
 @import "functions/checkers/is-lower-triangular";
 
 // Add two matrices
-@import "functions/add-matrices";
+@import "functions/misc/add-matrices";
 
 // Transpose a matrix
-@import "functions/transpose";
+@import "functions/misc/transpose";
 
 // Transpose a matrix
-@import "functions/add-row";
+@import "functions/setters/add-row";
 
 // Transpose a matrix
-@import "functions/add-column";
+@import "functions/setters/add-column";

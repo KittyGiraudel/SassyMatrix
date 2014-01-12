@@ -1,0 +1,21 @@
+// Swaps entries `$e1` and `$e2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `get-entry`
+// @require `set-entry`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $e1: (x y) coordinates of first entry
+// @param $e2: (x y) coordinates of second entry
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-entries($matrix, $e1, $e2) {
+  @if not _valid-coords($e1) or not _valid-coords($e2) {
+    @warn "Invalid coords.";
+    @return false;
+  }
+
+  $tmp: get-entry($matrix, $e1);
+  $matrix: set-entry(set-entry($matrix, $e1, get-entry($matrix, $e2)), $e2, $tmp);
+  @return $matrix;
+}

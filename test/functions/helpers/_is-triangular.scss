@@ -1,11 +1,11 @@
 @include describe("The is-triangular function") {
-  $matrix-top: (
+  $matrix-lower: (
     (1 0 0)
     (2 1 0)
     (0 0 1)
   );
 
-  $matrix-bottom: (
+  $matrix-upper: (
     (1 0 2)
     (0 1 0)
     (0 0 1)
@@ -16,10 +16,10 @@
     @include should(expect(_is-triangular(matrix(3), bottom)), to(equal(true)));
     @include should(expect(_is-triangular(unit-matrix(3), top)), to(equal(true)));
     @include should(expect(_is-triangular(unit-matrix(3), bottom)), to(equal(true)));
-    @include should(expect(_is-triangular($matrix-top, top)), to(equal(true)));
-    @include should(expect(_is-triangular($matrix-top, bottom)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, top)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, bottom)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-lower, top)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-lower, bottom)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-upper, top)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-upper, bottom)), to(equal(false)));
   }
 
   @include it("with unit flag should return if the matrix is triangular and the diagonal is 1") {
@@ -27,10 +27,10 @@
     @include should(expect(_is-triangular(unit-matrix(3), bottom, unit)), to(equal(true)));
     @include should(expect(_is-triangular(matrix(3), top, unit)), to(equal(false)));
     @include should(expect(_is-triangular(matrix(3), bottom, unit)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-top, top, unit)), to(equal(true)));
-    @include should(expect(_is-triangular($matrix-top, bottom, unit)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, top, unit)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, bottom, unit)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-lower, top, unit)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-lower, bottom, unit)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-upper, top, unit)), to(equal(true)));
+    @include should(expect(_is-triangular($matrix-upper, bottom, unit)), to(equal(false)));
   }
 
   @include it("with strict flag should return if the matrix is triangular and the diagonal is 0") {
@@ -38,9 +38,9 @@
     @include should(expect(_is-triangular(unit-matrix(3), bottom, strict)), to(equal(false)));
     @include should(expect(_is-triangular(matrix(3), top, strict)), to(equal(true)));
     @include should(expect(_is-triangular(matrix(3), bottom, strict)), to(equal(true)));
-    @include should(expect(_is-triangular($matrix-top, top, strict)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-top, bottom, strict)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, top, strict)), to(equal(false)));
-    @include should(expect(_is-triangular($matrix-bottom, bottom, strict)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-lower, top, strict)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-lower, bottom, strict)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-upper, top, strict)), to(equal(false)));
+    @include should(expect(_is-triangular($matrix-upper, bottom, strict)), to(equal(false)));
   }
 }

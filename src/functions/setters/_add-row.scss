@@ -1,0 +1,32 @@
+// Add a new `$row` to `$matrix`
+// --------------------------------------------------------------------------------
+// @require `swap-rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $row: row to add
+// @param $index: index to add row at
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function add-row($matrix, $row: (), $index: null) {
+  $desired-length: length(nth($matrix, 1));
+
+  @if $row == () {
+    @for $i from 1 through $desired-length {
+      $row: append($row, 0);
+    }
+  }
+  
+  @if length($row) != $desired-length {
+    @warn "Wrong length for new row; should be #{$desired-length}.";
+    @return false;
+  }
+  
+  $matrix: append($matrix, $row);
+
+  @if $index != null {
+    $matrix: swap-rows($matrix, -1, $index);
+  }
+
+  @return $matrix;
+}

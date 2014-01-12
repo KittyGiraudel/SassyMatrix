@@ -1,0 +1,22 @@
+@include describe("The add-row function") {
+  @include it("should add a new row to matrix") {
+    @include should(expect(rows(add-row(matrix(3)))), to(equal(rows(matrix(3)) + 1)));
+  }
+
+  @include it("should add a new empty row to matrix") {
+    @include should(expect(nth(add-row(matrix(3)), rows(matrix(3)) + 1)), to(equal(0 0 0)));
+  }
+
+  @include it("should add the new row if row is specified") {
+    @include should(expect(nth(add-row(matrix(3), (1 2 3)), rows(matrix(3)) + 1)), to(equal(1 2 3)));
+  }
+
+  @include it("should return false if given row is too short or too long") {
+    @include should(expect(add-row(matrix(3), (1 2))), to(equal(false)));
+    @include should(expect(add-row(matrix(3), (1 2 3 4))), to(equal(false)));
+  }
+
+  @include it("should insert new column at index if index is given") {
+    @include should(expect(add-row(matrix(3), (1 2 3), 1)), to(equal((1 2 3) (0 0 0) (0 0 0) (0 0 0))));
+  }
+}

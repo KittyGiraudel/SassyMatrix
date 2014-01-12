@@ -1,11 +1,11 @@
 @include describe("The is-lower-triangular function") {
-  $matrix-top: (
+  $matrix-lower: (
     (1 0 0)
     (2 1 0)
     (0 0 1)
   );
 
-  $matrix-bottom: (
+  $matrix-upper: (
     (1 0 2)
     (0 1 0)
     (0 0 1)
@@ -14,21 +14,21 @@
   @include it("should behave like the is-triangular function with bottom direction") {
     @include should(expect(is-lower-triangular(matrix(3))), to(equal(_is-triangular(matrix(3), bottom))));
     @include should(expect(is-lower-triangular(unit-matrix(3))), to(equal(_is-triangular(unit-matrix(3), bottom))));
-    @include should(expect(is-lower-triangular($matrix-top, bottom)), to(equal(_is-triangular($matrix-top, bottom))));
-    @include should(expect(is-lower-triangular($matrix-bottom, bottom)), to(equal(_is-triangular($matrix-bottom, bottom))));
+    @include should(expect(is-lower-triangular($matrix-lower, bottom)), to(equal(_is-triangular($matrix-lower, bottom))));
+    @include should(expect(is-lower-triangular($matrix-upper, bottom)), to(equal(_is-triangular($matrix-upper, bottom))));
   }
 
   @include it("with unit flag should return if the matrix is lower triangular and the diagonal is 1") {
     @include should(expect(is-lower-triangular(matrix(3), unit)), to(equal(_is-triangular(matrix(3), bottom, unit))));
     @include should(expect(is-lower-triangular(unit-matrix(3), unit)), to(equal(_is-triangular(unit-matrix(3), bottom, unit))));
-    @include should(expect(is-lower-triangular($matrix-top, unit)), to(equal(_is-triangular($matrix-top, bottom, unit))));
-    @include should(expect(is-lower-triangular($matrix-bottom, unit)), to(equal(_is-triangular($matrix-bottom, bottom, unit))));
+    @include should(expect(is-lower-triangular($matrix-lower, unit)), to(equal(_is-triangular($matrix-lower, bottom, unit))));
+    @include should(expect(is-lower-triangular($matrix-upper, unit)), to(equal(_is-triangular($matrix-upper, bottom, unit))));
   }
 
   @include it("with strict flag should return if the matrix is lower triangular and the diagonal is 0") {
     @include should(expect(is-lower-triangular(unit-matrix(3), strict)), to(equal(_is-triangular(unit-matrix(3), bottom, strict))));
     @include should(expect(is-lower-triangular(matrix(3), strict)), to(equal(_is-triangular(matrix(3), bottom, strict))));
-    @include should(expect(is-lower-triangular($matrix-top, strict)), to(equal(_is-triangular($matrix-top, bottom, strict))));
-    @include should(expect(is-lower-triangular($matrix-bottom, strict)), to(equal(_is-triangular($matrix-bottom, bottom, strict))));
+    @include should(expect(is-lower-triangular($matrix-lower, strict)), to(equal(_is-triangular($matrix-lower, bottom, strict))));
+    @include should(expect(is-lower-triangular($matrix-upper, strict)), to(equal(_is-triangular($matrix-upper, bottom, strict))));
   }
 }

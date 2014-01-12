@@ -16,10 +16,10 @@
       $entry: get-entry($matrix, ($i $j));
 
       @if $entry != 0 {
-        @if $side == top and $i < $j {
+        @if $side == top and $i > $j {
           @return false;
         }
-        @if $side == bottom and $i > $j {
+        @if $side == bottom and $i < $j {
           @return false;
         }
         @if $flag == strict and $i == $j {
