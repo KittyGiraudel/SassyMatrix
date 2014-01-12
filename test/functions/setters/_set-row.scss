@@ -1,0 +1,24 @@
+@include describe("The set-row function") {
+  $matrix: (
+    (1 2 3)
+    (4 5 6)
+    (7 8 9)
+  );
+
+  @include it("should set row at given index") {
+    @include should(expect(set-row($matrix,  1, a b c)), to(equal((a b c) (4 5 6) (7 8 9))));
+    @include should(expect(set-row($matrix, -1, a b c)), to(equal((1 2 3) (4 5 6) (a b c))));
+  }
+
+  @include it("should set empty row at given index if row is not defined") {
+    @include should(expect(set-row($matrix, 1)), to(equal((0 0 0) (4 5 6) (7 8 9))));
+  }
+
+  @include it("should return false if index is wrong") {
+    @include should(expect(set-row($matrix, "index")), to(equal(false)));
+  }
+
+  @include it("should return false if index is out of bound") {
+    @include should(expect(set-row($matrix, 4)), to(equal(false)));
+  }
+}

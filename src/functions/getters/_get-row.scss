@@ -6,8 +6,13 @@
 // @return list
 
 @function get-row($matrix, $index) {
-  @if type-of($index) != number or abs($index) > length($matrix) {
-    @warn "Out of bounds index.";
+  @if type-of($index) != number {
+    @warn "Invalid row index.";
+    @return false;
+  }
+
+  @if abs($index) > length($matrix) {
+    @warn "Out of bound row index.";
     @return false;
   }
 

@@ -16,6 +16,12 @@
 // Assigning values to matrix
 @import "functions/setters/set-entry";
 
+// Assigning values to matrix
+@import "functions/setters/set-row";
+
+// Assigning values to matrix
+@import "functions/setters/set-column";
+
 // Reading values from matrix
 @import "functions/getters/get-entry";
 

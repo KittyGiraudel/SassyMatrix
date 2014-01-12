@@ -1,0 +1,24 @@
+@include describe("The set-column function") {
+  $matrix: (
+    (1 2 3)
+    (4 5 6)
+    (7 8 9)
+  );
+
+  @include it("should set column at given index") {
+    @include should(expect(set-column($matrix,  1, a b c)), to(equal((a 2 3) (b 5 6) (c 8 9))));
+    @include should(expect(set-column($matrix, -1, a b c)), to(equal((1 2 a) (4 5 b) (7 8 c))));
+  }
+
+  @include it("should set empty column at given index if row is not defined") {
+    @include should(expect(set-column($matrix, 1)), to(equal((0 2 3) (0 5 6) (0 8 9))));
+  }
+
+  @include it("should return false if index is wrong") {
+    @include should(expect(set-column($matrix, "index")), to(equal(false)));
+  }
+
+  @include it("should return false if index is out of bound") {
+    @include should(expect(set-column($matrix, 4)), to(equal(false)));
+  }
+}
