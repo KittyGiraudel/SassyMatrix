@@ -1,57 +1,45 @@
 /*! SassyMatrix - v0.0.1 - 2014-01-12 */
-@function _valid-coords($coords) {
-  @if length($coords) != 2 
-  or type-of(nth($coords, 1)) != number 
-  or type-of(nth($coords, 2)) != number {
-    @return false;
+// Returns the visual representation of `$matrix` as a string
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix to display
+// --------------------------------------------------------------------------------
+// @return string
+
+@function display($matrix) {
+  $str: "";
+  @each $line in $matrix {
+    $tmp: "";
+    @each $item in $line {
+      $tmp: $tmp + " " + $item;
+    }
+    $str: $str + $tmp + "\A ";
   }
-  @return true;
+  @return $str;
 }
 
-// Initializing a matrix of `$x` by `$y` with 0s
-// --------------------------------------------------------------------------------
-// @param $x: number of rows
-// @param $y: number of columns
-// --------------------------------------------------------------------------------
-// @return matrix
+// Mixin displaying the matrix
+// using body pseudo-elements
+//
+// @param $matrix: matrix to display
+// @param $pseudo: pseudo element to use
 
-@function matrix($x, $y: $x) {
-  @if type-of($x) != number or type-of($y) != number {
-    @warn "Wrong dimensions for matrix.";
-    @return false;
-  }
-  
-  $matrix: ();
-  @for $i from 1 through $x {
-    $tmp: ();
-    @for $y from 1 through $y {
-      $tmp: append($tmp, 0)
+@mixin display($matrix, $pseudo: before) {
+    body:#{$pseudo} {
+        content: display($matrix)                 !important;
+
+        display: block                            !important;
+        margin: 1em                               !important;
+        padding: .5em                             !important;
+
+        background: #EFEFEF                       !important;
+        border: 1px solid #DDD                    !important;
+        border-radius: .2em                       !important;
+
+        color: #333                               !important;
+        font: 1.5em/1.5 "Courier New", monospace  !important;
+        text-shadow: 0 1px white                  !important;
+        white-space: pre-wrap                     !important;
     }
-    $matrix: append($matrix, $tmp);
-  }
-  @return $matrix;
-}
-
-// Initializing a matrix of `$x` by `$y` with its diagonal filled with 1s
-// --------------------------------------------------------------------------------
-// @require `matrix`
-// @require `set-entry`
-// --------------------------------------------------------------------------------
-// @param $x: number of rows
-// @param $y: number of columns
-// --------------------------------------------------------------------------------
-// @return matrix
-
-@function unit-matrix($x, $y: $x) {
-  $matrix: matrix($x, $y);
-  @for $i from 1 through $x {
-    @for $j from 1 through $y {
-      @if $i == $j {
-        $matrix: set-entry($matrix, ($i $j), 1);
-      }
-    }
-  }
-  @return $matrix;
 }
 
 // Returns number of rows in `$matrix`
@@ -73,10 +61,71 @@
   @return length(nth($matrix, 1));
 }
 
-// Assign `$value` at `$matrix[$coords[1], $coords[2]]`
+// Checks whether `$coords` are valid coordinates
 // --------------------------------------------------------------------------------
 // @require `rows`
 // @require `columns`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $coords: coordinates
+// --------------------------------------------------------------------------------
+// @return boolean
+
+@function _valid-coords($coords, $matrix: null) {
+  @if length($coords) == 1 {
+    $coords: ($coords, $coords);
+  }
+
+  $x: nth($coords, 1);
+  $y: nth($coords, 2);
+
+  @if length($coords) != 2 {
+    @warn "Wrong number of coordinates.";
+    @return false;
+  }
+
+  @if type-of($x) != number or type-of($y) != number {
+    @warn "Invalid coordinates.";
+    @return false;
+  }
+
+  @if $matrix {
+    @if abs($x) > rows($matrix) or abs($y) > columns($matrix) {
+      @warn "Out of bound coordinates.";
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+// Initializing a matrix of `$x` by `$y` with 0s
+// --------------------------------------------------------------------------------
+// @require `_valid-coords`
+// --------------------------------------------------------------------------------
+// @param $x: number of rows
+// @param $y: number of columns
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function matrix($x, $y: $x) {
+  @if _valid-coords(($x $y)) {
+    $matrix: ();
+    @for $i from 1 through $x {
+      $tmp: ();
+      @for $y from 1 through $y {
+        $tmp: append($tmp, 0)
+      }
+      $matrix: append($matrix, $tmp);
+    }
+    @return $matrix;
+  }
+  @return false;
+}
+
+// Assign `$value` at `$matrix[$coords[1], $coords[2]]`
+// --------------------------------------------------------------------------------
+// @require `_valid-coords`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix to update
 // @param $coords: (x y) coordinates
@@ -85,17 +134,81 @@
 // @return matrix
 
 @function set-entry($matrix, $coords, $value) {
-  @if not _valid-coords($coords) {
-    @warn "Invalid coords (#{$coords}).";
+  @if length($coords) == 1 {
+    $coords: ($coords $coords);
+  }
+  @if _valid-coords($coords, $matrix) {
+    @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
+  }
+  @return false;
+}
+
+// Returns entry at `$matrix[$coords[1], $coords[2]]`
+// --------------------------------------------------------------------------------
+// @require `_valid-coords`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $coords: (x y) coordinates
+// --------------------------------------------------------------------------------
+// @return literal
+
+@function get-entry($matrix, $coords) {
+  @if length($coords) == 1 {
+    $coords: ($coords $coords);
+  }
+
+  @if _valid-coords($coords, $matrix) {
+    @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
+  }
+
+  @return false;
+}
+
+// Return row at `$index` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $index: index
+// --------------------------------------------------------------------------------
+// @return list
+
+@function get-row($matrix, $index) {
+  @if type-of($index) != number {
+    @warn "Invalid row index.";
     @return false;
   }
 
-  @if abs(nth($coords, 1)) > rows($matrix) or abs(nth($coords, 2)) > columns($matrix) {
-    @warn "Out of bounds coords (#{nth($coords, 1)}:#{nth($coords, 2)}).";
+  @if abs($index) > rows($matrix) {
+    @warn "Out of bound row index.";
     @return false;
   }
 
-  @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
+  @return nth($matrix, $index);
+}
+// Swaps rows `$r1` and `$r2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $r1: index of row 1
+// @param $r2: index of row 2
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-rows($matrix, $r1, $r2) {
+  @if type-of($r1) != number or type-of($r2) != number {
+    @warn "Invalid row index.";
+    @return false;
+  }
+
+  @if abs($r1) > rows($matrix) or abs($r2) > rows($matrix) {
+    @warn "Out of bounds row index.";
+    @return false;
+  }
+
+  $tmp: nth($matrix, $r1);
+  @return set-nth(set-nth($matrix, $r1, nth($matrix, $r2)), $r2, $tmp);
 }
 
 // Set `$row` at `$index` in `$matrix`
@@ -134,6 +247,86 @@
   }
 
   @return set-nth($matrix, $index, $row);
+}
+// Returns whether `$matrix` has as many rows as columns
+// --------------------------------------------------------------------------------
+// @require `columns`
+// @require `rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// --------------------------------------------------------------------------------
+// @return boolean
+
+@function is-square($matrix) {
+  @return columns($matrix) == rows($matrix);
+}
+// Add a new `$row` to `$matrix`
+// --------------------------------------------------------------------------------
+// @require `swap-rows`
+// @require `columns`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $row: row to add
+// @param $index: index to add row at
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function add-row($matrix, $row: (), $index: null) {
+  $desired-length: columns($matrix);
+
+  @if $row == () {
+    @for $i from 1 through $desired-length {
+      $row: append($row, 0);
+    }
+  }
+  
+  @if length($row) != $desired-length {
+    @warn "Wrong length for new row; should be #{$desired-length}.";
+    @return false;
+  }
+  
+  $matrix: append($matrix, $row);
+
+  @if $index != null {
+    $matrix: swap-rows($matrix, -1, $index);
+  }
+
+  @return $matrix;
+}
+// Add a new `$column` to `$matrix` at `$index`
+// --------------------------------------------------------------------------------
+// @require `rows`
+// @require `swap-columns`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $column: column to add
+// @param $index: index to add column at
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function add-column($matrix, $column: (), $index: null) {
+  $desired-length: rows($matrix);
+
+  @if $column == () {
+    @for $i from 1 through $desired-length {
+      $column: append($column, 0);
+    }
+  }
+  
+  @if length($column) != $desired-length {
+    @warn "Wrong length for new column; should be #{$desired-length}.";
+    @return false;
+  }
+  
+  @for $i from 1 through $desired-length {
+    $matrix: set-nth($matrix, $i, append(nth($matrix, $i), nth($column, $i)));
+  }
+
+  @if $index != null {
+    $matrix: swap-columns($matrix, -1, $index);
+  }
+  
+  @return $matrix;
 }
 // Set `$column` at `$index` in `$matrix`
 // --------------------------------------------------------------------------------
@@ -178,54 +371,11 @@
   @return $matrix;
 }
 
-// Returns entry at `$matrix[$coords[1], $coords[2]]`
-// --------------------------------------------------------------------------------
-// @require `rows`
-// @require `columns`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $coords: (x y) coordinates
-// --------------------------------------------------------------------------------
-// @return literal
-
-@function get-entry($matrix, $coords) {
-  @if not _valid-coords($coords) {
-    @warn "Invalid coords (#{$coords}).";
-    @return false;
-  }
-
-  @if abs(nth($coords, 1)) > rows($matrix) or abs(nth($coords, 2)) > columns($matrix) {
-    @warn "Out of bounds coords (#{nth($coords, 1)}:#{nth($coords, 2)}).";
-    @return false;
-  }
-
-  @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
-}
-
-// Return row at `$index` from `$matrix`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $index: index
-// --------------------------------------------------------------------------------
-// @return list
-
-@function get-row($matrix, $index) {
-  @if type-of($index) != number {
-    @warn "Invalid row index.";
-    @return false;
-  }
-
-  @if abs($index) > length($matrix) {
-    @warn "Out of bound row index.";
-    @return false;
-  }
-
-  @return nth($matrix, $index);
-}
 // Return column at `$index` from `$matrix`
 // --------------------------------------------------------------------------------
 // @require `get-entry`
 // @require `rows`
+// @require `columns`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $index: index
@@ -238,7 +388,7 @@
     @return false;
   }
 
-  @if abs($index) > length(nth($matrix, 1)) {
+  @if abs($index) > columns($matrix) {
     @warn "Out of bound column index.";
     @return false;
   }
@@ -249,130 +399,6 @@
   }
 
   @return $column;
-}
-
-// Returns the visual representation of `$matrix` as a string
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix to display
-// --------------------------------------------------------------------------------
-// @return string
-
-@function display($matrix) {
-  $str: "";
-  @each $line in $matrix {
-    $tmp: "";
-    @each $item in $line {
-      $tmp: $tmp + " " + $item;
-    }
-    $str: $str + $tmp + "\A ";
-  }
-  @return $str;
-}
-
-// Mixin displaying the matrix
-// using body pseudo-elements
-//
-// @param $matrix: matrix to display
-// @param $pseudo: pseudo element to use
-
-@mixin display($matrix, $pseudo: before) {
-    body:#{$pseudo} {
-        content: display($matrix)                 !important;
-
-        display: block                            !important;
-        margin: 1em                               !important;
-        padding: .5em                             !important;
-
-        background: #EFEFEF                       !important;
-        border: 1px solid #DDD                    !important;
-        border-radius: .2em                       !important;
-
-        color: #333                               !important;
-        font: 1.5em/1.5 "Courier New", monospace  !important;
-        text-shadow: 0 1px white                  !important;
-        white-space: pre-wrap                     !important;
-    }
-}
-
-// Swaps entries `$e1` and `$e2` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `get-entry`
-// @require `set-entry`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $e1: (x y) coordinates of first entry
-// @param $e2: (x y) coordinates of second entry
-// --------------------------------------------------------------------------------
-// @return $matrix
-
-@function swap-entries($matrix, $e1, $e2) {
-  @if not _valid-coords($e1) or not _valid-coords($e2) {
-    @warn "Invalid coords.";
-    @return false;
-  }
-
-  $tmp: get-entry($matrix, $e1);
-  $matrix: set-entry(set-entry($matrix, $e1, get-entry($matrix, $e2)), $e2, $tmp);
-  @return $matrix;
-}
-
-// Swaps rows `$r1` and `$r2` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `columns`
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $r1: index of row 1
-// @param $r2: index of row 2
-// --------------------------------------------------------------------------------
-// @return $matrix
-
-@function swap-rows($matrix, $r1, $r2) {
-  @if type-of($r1) != number or type-of($r2) != number {
-    @warn "Invalid row index.";
-    @return false;
-  }
-
-  @if abs($r1) > rows($matrix) or abs($r2) > rows($matrix) {
-    @warn "Out of bounds row index.";
-    @return false;
-  }
-
-  $tmp: nth($matrix, $r1);
-  @return set-nth(set-nth($matrix, $r1, nth($matrix, $r2)), $r2, $tmp);
-}
-
-// Swaps columns `$c1` and `$c2` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `get-entry`
-// @require `set-entry`
-// @require `columns`
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $c1: index of column 1
-// @param $c2: index of column 2
-// --------------------------------------------------------------------------------
-// @return $matrix
-
-@function swap-columns($matrix, $c1, $c2) {
-  @if type-of($c1) != number or type-of($c2) != number {
-    @warn "Invalid column index.";
-    @return false;
-  }
-  
-  @if abs($c1) > columns($matrix) or abs($c2) > columns($matrix) {
-    @warn "Out of bounds column index.";
-    @return false;
-  }
-
-  @for $i from 1 through rows($matrix) {
-    $tmp: get-entry($matrix, ($i $c1));
-    $matrix: set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2)));
-    $matrix: set-entry($matrix, ($i $c2), $tmp);
-  }
-
-  @return $matrix;
 }
 
 // Checks whether all entries from `$matrix` are numeric
@@ -394,18 +420,6 @@
   @return true;
 }
 
-// Returns whether `$matrix` has as many rows as columns
-// --------------------------------------------------------------------------------
-// @require `columns`
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// --------------------------------------------------------------------------------
-// @return boolean
-
-@function is-square($matrix) {
-  @return columns($matrix) == rows($matrix);
-}
 // Checks whether all entries from the main diagonal of `$matrix`
 // are set while all other entries are equal to the 0
 // --------------------------------------------------------------------------------
@@ -467,9 +481,89 @@
   @return true;
 }
 
+// Initializing a matrix of `$x` by `$y` with its diagonal filled with 1s
+// --------------------------------------------------------------------------------
+// @require `_valid-coords`
+// @require `matrix`
+// @require `set-entry`
+// --------------------------------------------------------------------------------
+// @param $x: number of rows
+// @param $y: number of columns
+// --------------------------------------------------------------------------------
+// @return matrix
+
+@function unit-matrix($x, $y: $x) {
+  @if _valid-coords(($x $y)) {
+    $matrix: matrix($x, $y);
+    @for $i from 1 through $x {
+      @for $j from 1 through $y {
+        @if $i == $j {
+          $matrix: set-entry($matrix, ($i $j), 1);
+        }
+      }
+    }
+    @return $matrix;
+  }
+  @return false;
+}
+
+// Swaps entries `$e1` and `$e2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `_valid-coords`
+// @require `get-entry`
+// @require `set-entry`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $e1: (x y) coordinates of first entry
+// @param $e2: (x y) coordinates of second entry
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-entries($matrix, $e1, $e2) {
+  @if _valid-coords($e1, $matrix) and _valid-coords($e2, $matrix) {
+    $tmp: get-entry($matrix, $e1);
+    $matrix: set-entry(set-entry($matrix, $e1, get-entry($matrix, $e2)), $e2, $tmp);
+    @return $matrix;
+  }
+  @return false;
+}
+
+// Swaps columns `$c1` and `$c2` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `rows`
+// @require `columns`
+// @require `get-entry`
+// @require `set-entry`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $c1: index of column 1
+// @param $c2: index of column 2
+// --------------------------------------------------------------------------------
+// @return $matrix
+
+@function swap-columns($matrix, $c1, $c2) {
+  @if type-of($c1) != number or type-of($c2) != number {
+    @warn "Invalid column index.";
+    @return false;
+  }
+  
+  @if abs($c1) > columns($matrix) or abs($c2) > columns($matrix) {
+    @warn "Out of bounds column index.";
+    @return false;
+  }
+
+  @for $i from 1 through rows($matrix) {
+    $tmp: get-entry($matrix, ($i $c1));
+    $matrix: set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2)));
+    $matrix: set-entry($matrix, ($i $c2), $tmp);
+  }
+
+  @return $matrix;
+}
+
 // Checks whether `$matrix` is upper triangular with `$flag` option
 // --------------------------------------------------------------------------------
-// @require `helper/is-triangular`
+// @require `_is-triangular`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $flag: advanced option (null | strict | unit | atom)
@@ -482,7 +576,7 @@
 
 // Checks whether `$matrix` is lower triangular with `$flag` option
 // --------------------------------------------------------------------------------
-// @require `helper/is-triangular`
+// @require `_is-triangular`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $flag: advanced option (null | strict | unit | atom)
@@ -548,37 +642,4 @@
     }
   }
   @return $new-matrix;
-}
-
-// Add a new `$row` to `$matrix`
-// --------------------------------------------------------------------------------
-// @require `swap-rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $row: row to add
-// @param $index: index to add row at
-// --------------------------------------------------------------------------------
-// @return matrix
-
-@function add-row($matrix, $row: (), $index: null) {
-  $desired-length: length(nth($matrix, 1));
-
-  @if $row == () {
-    @for $i from 1 through $desired-length {
-      $row: append($row, 0);
-    }
-  }
-  
-  @if length($row) != $desired-length {
-    @warn "Wrong length for new row; should be #{$desired-length}.";
-    @return false;
-  }
-  
-  $matrix: append($matrix, $row);
-
-  @if $index != null {
-    $matrix: swap-rows($matrix, -1, $index);
-  }
-
-  @return $matrix;
 }
