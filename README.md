@@ -36,3 +36,20 @@ All you ever wanted to deal with matrices in Sass.
 ## Requirements
 
 All you need is a clean version of Sass 3.3. Otherwise it's just pure Sass madness.
+
+## Development
+
+### You need
+
+  * [NodeJS](http://nodejs.org)
+  * [Ruby](https://www.ruby-lang.org/)
+  * Sass 3.3 via `gem instal sass --pre`
+  * `grunt-cli` via `npm install -g grunt-cli`
+
+### How to
+
+  1. Fork this repository
+  2. Run `npm install`
+  3. `grunt dev`
+  4. Make your changes + write tests
+  5. Commit + Pull request
