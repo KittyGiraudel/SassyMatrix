@@ -1,0 +1,35 @@
+{
+  "name": "SassyMatrix",
+  "version": "0.0.1",
+  "description": "All you ever wanted to deal with matrices in Sass.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt bootcamp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HugoGiraudel/SassyMatrix"
+  },
+  "keywords": [
+    "Sass",
+    "matrix",
+    "matrices",
+    "scss"
+  ],
+  "author": "Hugo Giraudel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HugoGiraudel/SassyMatrix/issues"
+  },
+  "homepage": "https://github.com/HugoGiraudel/SassyMatrix",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "bootcamp": "~1.0.1"
+  }
+}
