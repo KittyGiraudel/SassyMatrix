@@ -28,5 +28,6 @@
 @import "functions/checkers/is-lower-triangular";
 @import "functions/misc/add-matrices";
 @import "functions/misc/transpose";
+@import "functions/checkers/is-symmetric";
 
 @include runner-end;

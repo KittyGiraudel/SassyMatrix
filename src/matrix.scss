@@ -97,3 +97,7 @@
 // Transpose a matrix
 // @dep: `rows`, `columns`, `get-entry`, `set-entry`
 @import "functions/misc/transpose";
+
+// Displaying matrix
+// @dep: `is-square`, `transpose`
+@import "functions/checkers/is-symmetric";

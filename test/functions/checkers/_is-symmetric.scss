@@ -1,0 +1,17 @@
+@include describe("The is-symmetric function") {
+  $matrix: (
+    (1 0 0)
+    (2 1 0)
+    (0 0 1)
+  );
+
+  @include it("should return false if the matrix is not squared") {
+    @include should(expect(is-symmetric(matrix(3, 2))), to(equal(false)));
+    @include should(expect(is-symmetric(matrix(2, 3))), to(equal(false)));
+  }
+
+  @include it("should return whether matrix is the same as transposed matrix") {
+    @include should(expect(is-symmetric(matrix(3))), to(equal(transpose(matrix(3)) == matrix(3))));
+    @include should(expect(is-symmetric($matrix)), to(equal(false)));
+  }
+}
