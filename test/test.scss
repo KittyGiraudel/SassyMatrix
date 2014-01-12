@@ -3,30 +3,30 @@
 
 @include runner-start;
 
+@import "functions/misc/display";
+@import "functions/misc/rows";
+@import "functions/misc/columns";
 @import "functions/helpers/valid-coords";
 @import "functions/init/matrix";
-@import "functions/init/unit-matrix";
-@import "functions/misc/columns";
-@import "functions/misc/rows";
-@import "functions/misc/display";
-@import "functions/getters/get-entry";
-@import "functions/getters/get-column";
-@import "functions/getters/get-row";
 @import "functions/setters/set-entry";
-@import "functions/setters/set-row";
-@import "functions/setters/set-column";
-@import "functions/swap/swap-entries";
-@import "functions/swap/swap-columns";
+@import "functions/getters/get-entry";
+@import "functions/getters/get-row";
 @import "functions/swap/swap-rows";
-@import "functions/misc/add-matrices";
-@import "functions/misc/transpose";
+@import "functions/setters/set-row";
+@import "functions/checkers/is-square";
 @import "functions/setters/add-row";
 @import "functions/setters/add-column";
-@import "functions/helpers/is-triangular";
-@import "functions/checkers/is-square";
+@import "functions/getters/get-column";
+@import "functions/setters/set-column";
 @import "functions/checkers/is-numeric";
 @import "functions/checkers/is-diagonal";
-@import "functions/checkers/is-lower-triangular";
+@import "functions/helpers/is-triangular";
+@import "functions/init/unit-matrix";
+@import "functions/swap/swap-entries";
+@import "functions/swap/swap-columns";
 @import "functions/checkers/is-upper-triangular";
+@import "functions/checkers/is-lower-triangular";
+@import "functions/misc/add-matrices";
+@import "functions/misc/transpose";
 
 @include runner-end;

@@ -1,5 +1,7 @@
 // Return row at `$index` from `$matrix`
 // --------------------------------------------------------------------------------
+// @require `rows`
+// --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $index: index
 // --------------------------------------------------------------------------------
@@ -11,7 +13,7 @@
     @return false;
   }
 
-  @if abs($index) > length($matrix) {
+  @if abs($index) > rows($matrix) {
     @warn "Out of bound row index.";
     @return false;
   }

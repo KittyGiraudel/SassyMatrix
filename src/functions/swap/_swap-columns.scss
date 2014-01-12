@@ -1,9 +1,9 @@
 // Swaps columns `$c1` and `$c2` from `$matrix`
 // --------------------------------------------------------------------------------
+// @require `rows`
+// @require `columns`
 // @require `get-entry`
 // @require `set-entry`
-// @require `columns`
-// @require `rows`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $c1: index of column 1

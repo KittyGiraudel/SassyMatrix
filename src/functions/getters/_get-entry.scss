@@ -1,7 +1,6 @@
 // Returns entry at `$matrix[$coords[1], $coords[2]]`
 // --------------------------------------------------------------------------------
-// @require `rows`
-// @require `columns`
+// @require `_valid-coords`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
 // @param $coords: (x y) coordinates
