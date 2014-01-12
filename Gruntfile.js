@@ -84,5 +84,23 @@ module.exports = function(grunt) {
   // Tasks
   grunt.registerTask('test', ['sass', 'bootcamp']);
   grunt.registerTask('dev', ['test', 'watch']);
-  grunt.registerTask('build', ['test', 'concat']);
+  grunt.registerTask('build', ['updateConcatFiles', 'test', 'concat']);
+
+  grunt.registerTask('updateConcatFiles', 'pull out the files form `src/matrix.scss` ', function() {
+    var matricContent = grunt.file.read('src/matrix.scss'),
+	regex = /@import\s*"(.*?)";/g,
+	paths = [],
+	match;
+
+    while ( ( match = regex.exec(matricContent)) !== null ){
+      var path = match[1],
+	  realPath = path.substr(0, path.lastIndexOf('/')+1),
+	  fileName = path.substr(path.lastIndexOf('/')+1);
+
+      paths.push ( 'src/' + realPath + '_' + fileName + '.scss' );
+    }
+
+    grunt.config.set('concat.dist.src', paths);
+  });
+
 };
