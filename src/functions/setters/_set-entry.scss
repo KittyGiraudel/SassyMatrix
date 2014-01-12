@@ -10,15 +10,11 @@
 // @return matrix
 
 @function set-entry($matrix, $coords, $value) {
-  @if not _valid-coords($coords) {
-    @warn "Invalid coords (#{$coords}).";
-    @return false;
+  @if length($coords) == 1 {
+    $coords: ($coords $coords);
   }
-
-  @if abs(nth($coords, 1)) > rows($matrix) or abs(nth($coords, 2)) > columns($matrix) {
-    @warn "Out of bounds coords (#{nth($coords, 1)}:#{nth($coords, 2)}).";
-    @return false;
+  @if _valid-coords($coords, $matrix) {
+    @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
   }
-
-  @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
+  @return false;
 }

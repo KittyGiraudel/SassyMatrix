@@ -6,10 +6,15 @@
   );
 
   @include it("should return the value at position x y") {
-    @include should(expect(get-entry($matrix, ( 1  1))), to(equal(1)));
     @include should(expect(get-entry($matrix, ( 1 -1))), to(equal(3)));
     @include should(expect(get-entry($matrix, (-1  1))), to(equal(7)));
     @include should(expect(get-entry($matrix, (-1 -1))), to(equal(9)));
+  }
+
+  @include it("should return the value at position x x if y is ommited") {
+    @include should(expect(get-entry($matrix, 1)), to(equal(get-entry($matrix, (1 1)))));
+    @include should(expect(get-entry($matrix, 2)), to(equal(get-entry($matrix, (2 2)))));
+    @include should(expect(get-entry($matrix, 3)), to(equal(get-entry($matrix, (3 3)))));
   }
 
   @include it("should return false if coords are out of bounds") {
@@ -19,6 +24,5 @@
 
   @include it("should return false if coords are wrong") {
     @include should(expect(get-entry($matrix, ("1" "1"))), to(equal(false)));
-    @include should(expect(get-entry($matrix, (1))), to(equal(false)));
   }
 }

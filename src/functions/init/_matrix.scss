@@ -6,18 +6,16 @@
 // @return matrix
 
 @function matrix($x, $y: $x) {
-  @if type-of($x) != number or type-of($y) != number {
-    @warn "Wrong dimensions for matrix.";
-    @return false;
-  }
-  
-  $matrix: ();
-  @for $i from 1 through $x {
-    $tmp: ();
-    @for $y from 1 through $y {
-      $tmp: append($tmp, 0)
+  @if _valid-coords(($x $y)) {
+    $matrix: ();
+    @for $i from 1 through $x {
+      $tmp: ();
+      @for $y from 1 through $y {
+        $tmp: append($tmp, 0)
+      }
+      $matrix: append($matrix, $tmp);
     }
-    $matrix: append($matrix, $tmp);
+    @return $matrix;
   }
-  @return $matrix;
+  @return false;
 }

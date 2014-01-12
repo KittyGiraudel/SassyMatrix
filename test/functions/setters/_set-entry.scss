@@ -1,11 +1,16 @@
 @include describe("The set-entry function") {
   $matrix: matrix(3);
 
-  @include it("should return the value at position x y") {
+  @include it("should set value at position x y") {
     @include should(expect(set-entry($matrix, ( 1  1), 1)), to(equal((1 0 0) (0 0 0) (0 0 0))));
     @include should(expect(set-entry($matrix, ( 1 -1), 1)), to(equal((0 0 1) (0 0 0) (0 0 0))));
     @include should(expect(set-entry($matrix, (-1  1), 1)), to(equal((0 0 0) (0 0 0) (1 0 0))));
     @include should(expect(set-entry($matrix, (-1 -1), 1)), to(equal((0 0 0) (0 0 0) (0 0 1))));
+  }
+
+  @include it("should set value at position x x if y is ommited") {
+    @include should(expect(set-entry($matrix, 1, 1)), to(equal(set-entry($matrix, ( 1  1), 1))));
+    @include should(expect(set-entry($matrix, -1, 1)), to(equal(set-entry($matrix, (-1 -1), 1))));
   }
 
   @include it("should return false if coords are out of bounds") {
@@ -15,6 +20,5 @@
 
   @include it("should return false if coords are wrong") {
     @include should(expect(set-entry($matrix, ("1" "1"), 1)), to(equal(false)));
-    @include should(expect(set-entry($matrix, 1, 1)), to(equal(false)));
   }
 }

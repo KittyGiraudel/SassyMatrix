@@ -1,6 +1,9 @@
 @include describe("The valid-coords function") {
-  @include it("should return false if length of coords is not 2") {
-    @include should(expect(_valid-coords(1)), to(equal(false)));
+  @include it("should return true if only one valid coord is passed") {
+    @include should(expect(_valid-coords(1)), to(equal(true)));
+  }
+  
+  @include it("should return false if length of coords is greater than 2") {
     @include should(expect(_valid-coords(1 2 3)), to(equal(false)));
   }
 

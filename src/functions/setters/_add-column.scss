@@ -1,5 +1,6 @@
 // Add a new `$column` to `$matrix` at `$index`
 // --------------------------------------------------------------------------------
+// @require `rows`
 // @require `swap-columns`
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix
@@ -9,7 +10,7 @@
 // @return matrix
 
 @function add-column($matrix, $column: (), $index: null) {
-  $desired-length: length($matrix);
+  $desired-length: rows($matrix);
 
   @if $column == () {
     @for $i from 1 through $desired-length {

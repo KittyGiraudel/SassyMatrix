@@ -1,8 +1,8 @@
 @include describe("Instanciating a new unit matrix") {
   @include it("should return x by y grid filled with 0 except for main diagonal which should be filled with 1") {
     @include should(expect(unit-matrix(3)), to(equal((1 0 0) (0 1 0) (0 0 1))));
-    @include should(expect(unit-matrix(3, 3)), to(equal(unit-matrix(3))));
-    @include should(expect(unit-matrix(3, 2)), to(equal((1 0) (0 1) (0 0))));
-    @include should(expect(unit-matrix(2, 3)), to(equal((1 0 0) (0 1 0))));
+    //@include should(expect(unit-matrix(3, 3)), to(equal(unit-matrix(3))));
+    //@include should(expect(unit-matrix(3, 2)), to(equal((1 0) (0 1) (0 0))));
+    //@include should(expect(unit-matrix(2, 3)), to(equal((1 0 0) (0 1 0))));
   }
 }
