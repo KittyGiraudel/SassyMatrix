@@ -10,9 +10,15 @@ All you ever wanted to deal with matrices in Sass.
 
 ### Writing in matrix
 * `set-entry($matrix, $coords, $value)`: set `$value` at `$matrix[$coords[1], $coords[2]]`
+* `set-column($matrix, $index, $column: ())`: set `$column` at `$index` in `$matrix`
+* `set-row($matrix, $index, $row: ())`: set `$row` at `$index` in `$matrix`
+* `add-column($matrix, $column: (), $index: null)`: add `$column` at `$index` in `$matrix`
+* `add-row($matrix, $row: (), $index: null)`: add `$row` at `$index` in `$matrix`
 
 ### Reading matrix
 * `get-entry($matrix, $coords)`: get entry at `$matrix[$coords[1], $coords[2]]`
+* `get-column($matrix, $index)`: get column at `$index` from `$matrix`
+* `get-row($matrix, $index)`: get row at `$index` from `$matrix`
 
 ### Displaying matrix
 * `display($matrix)`: display matrix
