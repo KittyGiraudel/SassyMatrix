@@ -8,6 +8,12 @@ module.exports = function(grunt) {
 
   // Grunt Tasks
   grunt.initConfig({
+
+    dir : {
+      src : 'stylesheets',
+      dist : 'dist'
+    },
+
     pkg: grunt.file.readJSON('package.json'),
 
     concat: {
@@ -16,33 +22,33 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'src/functions/misc/_display.scss',
-          'src/functions/misc/_rows.scss',
-          'src/functions/misc/_columns.scss',
-          'src/functions/helpers/_valid-coords.scss',
-          'src/functions/init/_matrix.scss',
-          'src/functions/setters/_set-entry.scss',
-          'src/functions/getters/_get-entry.scss',
-          'src/functions/getters/_get-row.scss',
-          'src/functions/swap/_swap-rows.scss',
-          'src/functions/setters/_set-row.scss',
-          'src/functions/checkers/_is-square.scss',
-          'src/functions/setters/_add-row.scss',
-          'src/functions/setters/_add-column.scss',
-          'src/functions/setters/_set-column.scss',
-          'src/functions/getters/_get-column.scss',
-          'src/functions/checkers/_is-numeric.scss',
-          'src/functions/checkers/_is-diagonal.scss',
-          'src/functions/helpers/_is-triangular.scss',
-          'src/functions/init/_unit-matrix.scss',
-          'src/functions/swap/_swap-entries.scss',
-          'src/functions/swap/_swap-columns.scss',
-          'src/functions/checkers/_is-upper-triangular.scss',
-          'src/functions/checkers/_is-lower-triangular.scss',
-          'src/functions/misc/_add-matrices.scss',
-          'src/functions/misc/_transpose.scss'
+          '<%= dir.src %>/functions/misc/_display.scss',
+          '<%= dir.src %>/functions/misc/_rows.scss',
+          '<%= dir.src %>/functions/misc/_columns.scss',
+          '<%= dir.src %>/functions/helpers/_valid-coords.scss',
+          '<%= dir.src %>/functions/init/_matrix.scss',
+          '<%= dir.src %>/functions/setters/_set-entry.scss',
+          '<%= dir.src %>/functions/getters/_get-entry.scss',
+          '<%= dir.src %>/functions/getters/_get-row.scss',
+          '<%= dir.src %>/functions/swap/_swap-rows.scss',
+          '<%= dir.src %>/functions/setters/_set-row.scss',
+          '<%= dir.src %>/functions/checkers/_is-square.scss',
+          '<%= dir.src %>/functions/setters/_add-row.scss',
+          '<%= dir.src %>/functions/setters/_add-column.scss',
+          '<%= dir.src %>/functions/setters/_set-column.scss',
+          '<%= dir.src %>/functions/getters/_get-column.scss',
+          '<%= dir.src %>/functions/checkers/_is-numeric.scss',
+          '<%= dir.src %>/functions/checkers/_is-diagonal.scss',
+          '<%= dir.src %>/functions/helpers/_is-triangular.scss',
+          '<%= dir.src %>/functions/init/_unit-matrix.scss',
+          '<%= dir.src %>/functions/swap/_swap-entries.scss',
+          '<%= dir.src %>/functions/swap/_swap-columns.scss',
+          '<%= dir.src %>/functions/checkers/_is-upper-triangular.scss',
+          '<%= dir.src %>/functions/checkers/_is-lower-triangular.scss',
+          '<%= dir.src %>/functions/misc/_add-matrices.scss',
+          '<%= dir.src %>/functions/misc/_transpose.scss'
         ],
-        dest: 'dist/_SassyMatrix.scss',
+        dest: './<%= dir.dist %>/_SassyMatrix.scss',
       },
     },
 
@@ -74,7 +80,7 @@ module.exports = function(grunt) {
       dist: {
         files: [
                 './test/**/*.scss',
-                './src/**/*.scss'
+                './<%= dir.src %>/**/*.scss'
                 ],
         tasks: ['test']
       }
@@ -85,4 +91,5 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['sass', 'bootcamp']);
   grunt.registerTask('dev', ['test', 'watch']);
   grunt.registerTask('build', ['test', 'concat']);
+
 };
