@@ -1,8 +1,7 @@
 {
-  "name": "SassyMatrix",
+  "name": "sassymatrix",
   "version": "0.0.1",
   "description": "All you ever wanted to deal with matrices in Sass.",
-  "main": "Gruntfile.js",
   "directories": {
     "test": "test"
   },
