@@ -88,6 +88,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('updateConcatFiles', 'pull out the files form `src/matrix.scss` ', function() {
     var matricContent = grunt.file.read('src/matrix.scss'),
+<<<<<<< HEAD
 	regex = /@import\s*"(.*?)";/g,
 	paths = [],
 	match;
@@ -96,6 +97,16 @@ module.exports = function(grunt) {
       var path = match[1],
 	  realPath = path.substr(0, path.lastIndexOf('/')+1),
 	  fileName = path.substr(path.lastIndexOf('/')+1);
+=======
+        regex = /@import\s*"(.*?)";/g,
+        paths = [],
+        match;
+
+    while ( ( match = regex.exec(matricContent)) !== null ){
+      var path = match[1],
+          realPath = path.substr(0, path.lastIndexOf('/')+1),
+          fileName = path.substr(path.lastIndexOf('/')+1);
+>>>>>>> a7a8c2c5fc1a054d3d0e86639b31e2b604c5238c
 
       paths.push ( 'src/' + realPath + '_' + fileName + '.scss' );
     }
