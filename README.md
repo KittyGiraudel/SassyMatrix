@@ -1,4 +1,4 @@
-# SassyMatrix
+# SassyMatrix [![Build Status](https://travis-ci.org/HugoGiraudel/SassyMatrix.png)](https://travis-ci.org/HugoGiraudel/SassyMatrix)
 
 All you ever wanted to deal with matrices in Sass.
 
