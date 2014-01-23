@@ -1,0 +1,30 @@
+// Checks whether `$matrix` is `$side` triangular with `$flag` options
+// --------------------------------------------------------------------------------
+// @require `rows`
+// @require `columns`
+// @require `get-entry`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $side: side (top | bottom)
+// @param $flag: advanced options (null | strict | unit | atom)
+// --------------------------------------------------------------------------------
+// @return boolean
+
+@function _is-triangular($matrix, $side: top, $flag: null) {
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      $entry: get-entry($matrix, ($i $j));
+      @if $i > $j {
+        @if $side == top and $entry != 0 { @return false; }
+      }
+      @else if $i < $j {
+        @if $side == bottom and $entry != 0 { @return false; }
+      }
+      @else {
+        @if $flag == strict and $entry != 0 { @return false; }
+        @if $flag == unit and $entry != 1 { @return false; }
+      }
+    }
+  }
+  @return true;
+}

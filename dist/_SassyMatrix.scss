@@ -1,4 +1,4 @@
-/*! SassyMatrix - v0.0.1 - 2014-01-12 */
+/*! sassymatrix - v0.0.1 - 2014-01-23 */
 // Returns the visual representation of `$matrix` as a string
 // --------------------------------------------------------------------------------
 // @param $matrix: matrix to display
@@ -459,22 +459,15 @@
   @for $i from 1 through rows($matrix) {
     @for $j from 1 through columns($matrix) {
       $entry: get-entry($matrix, ($i $j));
-
-      @if $entry != 0 {
-        @if $side == top and $i > $j {
-          @return false;
-        }
-        @if $side == bottom and $i < $j {
-          @return false;
-        }
-        @if $flag == strict and $i == $j {
-          @return false;
-        }
+      @if $i > $j {
+        @if $side == top and $entry != 0 { @return false; }
       }
-      @else if $entry != 1 {
-        @if $flag == unit and $i == $j {
-          @return false;
-        }
+      @else if $i < $j {
+        @if $side == bottom and $entry != 0 { @return false; }
+      }
+      @else {
+        @if $flag == strict and $entry != 0 { @return false; }
+        @if $flag == unit and $entry != 1 { @return false; }
       }
     }
   }

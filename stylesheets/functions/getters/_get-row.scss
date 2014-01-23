@@ -1,0 +1,22 @@
+// Return row at `$index` from `$matrix`
+// --------------------------------------------------------------------------------
+// @require `rows`
+// --------------------------------------------------------------------------------
+// @param $matrix: matrix
+// @param $index: index
+// --------------------------------------------------------------------------------
+// @return list
+
+@function get-row($matrix, $index) {
+  @if type-of($index) != number {
+    @warn "Invalid row index.";
+    @return false;
+  }
+
+  @if abs($index) > rows($matrix) {
+    @warn "Out of bound row index.";
+    @return false;
+  }
+
+  @return nth($matrix, $index);
+}
