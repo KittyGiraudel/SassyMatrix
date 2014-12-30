@@ -1,12 +1,8 @@
-// Returns entry at `$matrix[$coords[1], $coords[2]]`
-// --------------------------------------------------------------------------------
-// @require `_valid-coords`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $coords: (x y) coordinates
-// --------------------------------------------------------------------------------
-// @return literal
-
+/// Returns entry at `$matrix[$coords[1], $coords[2]]`
+/// @param {Matrix} $matrix - matrix
+/// @param $coords - (x y) coordinates
+/// @return {*}
+/// @require {function} _valid-coords
 @function get-entry($matrix, $coords) {
   @if length($coords) == 1 {
     $coords: ($coords $coords);

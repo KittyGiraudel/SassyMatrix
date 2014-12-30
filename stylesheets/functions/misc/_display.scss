@@ -1,9 +1,6 @@
-// Returns the visual representation of `$matrix` as a string
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix to display
-// --------------------------------------------------------------------------------
-// @return string
-
+/// Returns the visual representation of `$matrix` as a string
+/// @param {Matrix} $matrix - matrix to display
+/// @return {String}
 @function display($matrix) {
   $str: "";
   @each $line in $matrix {
@@ -16,27 +13,24 @@
   @return $str;
 }
 
-// Mixin displaying the matrix
-// using body pseudo-elements
-//
-// @param $matrix: matrix to display
-// @param $pseudo: pseudo element to use
-
+/// Mixin displaying the matrix using body pseudo-elements
+/// @param {Matrix} $matrix - matrix to display
+/// @param {String} $pseudo (before) - pseudo element to use
 @mixin display($matrix, $pseudo: before) {
-    body:#{$pseudo} {
-        content: display($matrix)                 !important;
+  body:#{$pseudo} {
+    content: display($matrix)                 !important;
 
-        display: block                            !important;
-        margin: 1em                               !important;
-        padding: .5em                             !important;
+    display: block                            !important;
+    margin: 1em                               !important;
+    padding: .5em                             !important;
 
-        background: #EFEFEF                       !important;
-        border: 1px solid #DDD                    !important;
-        border-radius: .2em                       !important;
+    background: #EFEFEF                       !important;
+    border: 1px solid #DDD                    !important;
+    border-radius: .2em                       !important;
 
-        color: #333                               !important;
-        font: 1.5em/1.5 "Courier New", monospace  !important;
-        text-shadow: 0 1px white                  !important;
-        white-space: pre-wrap                     !important;
-    }
+    color: #333                               !important;
+    font: 1.5em/1.5 "Courier New", monospace  !important;
+    text-shadow: 0 1px white                  !important;
+    white-space: pre-wrap                     !important;
+  }
 }

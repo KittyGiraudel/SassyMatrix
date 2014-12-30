@@ -1,17 +1,14 @@
-// Initializing a matrix of `$x` by `$y` with its diagonal filled with 1s
-// --------------------------------------------------------------------------------
-// @require `_valid-coords`
-// @require `matrix`
-// @require `set-entry`
-// --------------------------------------------------------------------------------
-// @param $x: number of rows
-// @param $y: number of columns
-// --------------------------------------------------------------------------------
-// @return matrix
-
+/// Initializing a matrix of `$x` by `$y` with its diagonal filled with 1s
+/// @param $x      - number of rows
+/// @param $y ($x) - number of columns
+/// @return {Matrix}
+/// @require {function} _valid-coords
+/// @require {function} matrix
+/// @require {function} set-entry
 @function unit-matrix($x, $y: $x) {
   @if _valid-coords(($x $y)) {
     $matrix: matrix($x, $y);
+
     @for $i from 1 through $x {
       @for $j from 1 through $y {
         @if $i == $j {
@@ -19,7 +16,9 @@
         }
       }
     }
+
     @return $matrix;
   }
+
   @return false;
 }

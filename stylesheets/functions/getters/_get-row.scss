@@ -1,12 +1,8 @@
-// Return row at `$index` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $index: index
-// --------------------------------------------------------------------------------
-// @return list
-
+/// Return row at `$index` from `$matrix`
+/// @require {function} rows
+/// @param {Matrix} $matrix - matrix
+/// @param {Number} $index - index
+/// @return {List}
 @function get-row($matrix, $index) {
   @if type-of($index) != number {
     @warn "Invalid row index.";

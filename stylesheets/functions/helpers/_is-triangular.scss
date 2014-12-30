@@ -1,15 +1,11 @@
-// Checks whether `$matrix` is `$side` triangular with `$flag` options
-// --------------------------------------------------------------------------------
-// @require `rows`
-// @require `columns`
-// @require `get-entry`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $side: side (top | bottom)
-// @param $flag: advanced options (null | strict | unit | atom)
-// --------------------------------------------------------------------------------
-// @return boolean
-
+/// Checks whether `$matrix` is `$side` triangular with `$flag` options
+/// @param {Matrix} $matrix - matrix
+/// @param {String} $side (top) - side (top | bottom)
+/// @param {String | Null} $flag (null) - advanced options (null | strict | unit | atom)
+/// @return {Bool}
+/// @require {function} rows
+/// @require {function} columns
+/// @require {function} get-entry
 @function _is-triangular($matrix, $side: top, $flag: null) {
   @for $i from 1 through rows($matrix) {
     @for $j from 1 through columns($matrix) {

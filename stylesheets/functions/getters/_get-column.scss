@@ -1,14 +1,10 @@
-// Return column at `$index` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `get-entry`
-// @require `rows`
-// @require `columns`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $index: index
-// --------------------------------------------------------------------------------
-// @return list
-
+/// Return column at `$index` from `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @param {Number} $index - index
+/// @return {List}
+/// @require {function} get-entry
+/// @require {function} rows
+/// @require {function} columns
 @function get-column($matrix, $index) {
   @if type-of($index) != number {
     @warn "Invalid column index.";

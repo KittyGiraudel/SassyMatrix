@@ -1,19 +1,15 @@
-// Set `$column` at `$index` in `$matrix`
-// --------------------------------------------------------------------------------
-// @require `set-entry`
-// @require `rows`
-// @require `columns`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $column: column
-// @param $index: index
-// --------------------------------------------------------------------------------
-// @return matrix
-
+/// Set `$column` at `$index` in `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @param {Number} $index - index
+/// @param {List} $column (()) - column
+/// @return {Matrix}
+/// @require {function} set-entry
+/// @require {function} rows
+/// @require {function} columns
 @function set-column($matrix, $index, $column: ()) {
   $desired-length: rows($matrix);
 
-  @if type-of($index) != number {
+  @if type-of($index) != "number" {
     @warn "Invalid column index.";
     @return false;
   }

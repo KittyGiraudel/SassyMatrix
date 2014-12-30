@@ -1,15 +1,11 @@
-// Swaps rows `$r1` and `$r2` from `$matrix`
-// --------------------------------------------------------------------------------
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $r1: index of row 1
-// @param $r2: index of row 2
-// --------------------------------------------------------------------------------
-// @return $matrix
-
+/// Swaps rows `$r1` and `$r2` from `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @param {Number} $r1 - index of row 1
+/// @param {Number} $r2 - index of row 2
+/// @return {Matrix}
+/// @require {function} rows
 @function swap-rows($matrix, $r1, $r2) {
-  @if type-of($r1) != number or type-of($r2) != number {
+  @if type-of($r1) != "number" or type-of($r2) != "number" {
     @warn "Invalid row index.";
     @return false;
   }

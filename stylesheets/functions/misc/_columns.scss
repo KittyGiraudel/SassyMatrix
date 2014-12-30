@@ -1,9 +1,6 @@
-// Returns number of columns in `$matrix`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// --------------------------------------------------------------------------------
-// @return number
-
+/// Returns number of columns in `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @return {Number}
 @function columns($matrix) {
   @return length(nth($matrix, 1));
 }

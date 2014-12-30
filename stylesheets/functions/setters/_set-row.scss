@@ -1,18 +1,14 @@
-// Set `$row` at `$index` in `$matrix`
-// --------------------------------------------------------------------------------
-// @require `columns`
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $row: row
-// @param $index: index
-// --------------------------------------------------------------------------------
-// @return matrix
-
+/// Set `$row` at `$index` in `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @param {Number} $index - index
+/// @param {List} $row (()) - row
+/// @return {Matrix}
+/// @require {function} columns
+/// @require {function} rows
 @function set-row($matrix, $index, $row: ()) {
   $desired-length: columns($matrix);
 
-  @if type-of($index) != number {
+  @if type-of($index) != "number" {
     @warn "Invalid row index.";
     @return false;
   }

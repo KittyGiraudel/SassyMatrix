@@ -1,14 +1,10 @@
-// Checks whether all entries from the main diagonal of `$matrix`
-// are set while all other entries are equal to the 0
-// --------------------------------------------------------------------------------
-// @require `get-entry`
-// @require `columns`
-// @require `rows`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// --------------------------------------------------------------------------------
-// @return boolean
-
+/// Checks whether all entries from the main diagonal of `$matrix`
+/// are set while all other entries are equal to 0
+/// @param {Matrix} $matrix - matrix
+/// @return {Bool}
+/// @require {function} get-entry
+/// @require {function} columns
+/// @require {function} rows
 @function is-diagonal($matrix) {
   @for $i from 1 through rows($matrix) {
     @for $j from 1 through columns($matrix) {
@@ -18,5 +14,6 @@
       }
     }
   }
+
   @return true;
 }

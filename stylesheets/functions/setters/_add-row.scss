@@ -1,14 +1,10 @@
-// Add a new `$row` to `$matrix`
-// --------------------------------------------------------------------------------
-// @require `swap-rows`
-// @require `columns`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $row: row to add
-// @param $index: index to add row at
-// --------------------------------------------------------------------------------
-// @return matrix
-
+/// Add a new `$row` to `$matrix`
+/// @param {Matrix} $matrix - matrix
+/// @param {List} $row (()) - row to add
+/// @param {Number | Null} $index (null) - index to add row at
+/// @return {Matrix}
+/// @require {function} swap-rows
+/// @require {function} columns
 @function add-row($matrix, $row: (), $index: null) {
   $desired-length: columns($matrix);
 
@@ -17,12 +13,12 @@
       $row: append($row, 0);
     }
   }
-  
+
   @if length($row) != $desired-length {
     @warn "Wrong length for new row; should be #{$desired-length}.";
     @return false;
   }
-  
+
   $matrix: append($matrix, $row);
 
   @if $index != null {

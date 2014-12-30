@@ -1,26 +1,24 @@
-// Add `$matrices`
-// --------------------------------------------------------------------------------
-// @require `rows`
-// @require `columns`
-// @require `get-entry`
-// @require `set-entry`
-// --------------------------------------------------------------------------------
-// @param $matrices: matrices
-// --------------------------------------------------------------------------------
-// @return matrix
-
+/// Add `$matrices`
+/// @param {Arglist} $matrices - matrices
+/// @return {Matrix}
+/// @require {function} rows
+/// @require {function} columns
+/// @require {function} get-entry
+/// @require {function} set-entry
 @function add-matrices($matrices...) {
   $matrix: nth($matrices, 1);
+  $rows: rows($matrix);
+  $columns: columns($matrix);
+
   @each $m in $matrices {
-    @if columns($matrix) != columns($m)
-    or rows($matrix) != rows($m) {
+    @if $columns != columns($m) or $rows != rows($m) {
       @warn "All matrices do not have same dimensions.";
       @return false;
     }
   }
 
-  @for $i from 1 through rows($matrix) {
-    @for $j from 1 through columns($matrix) {
+  @for $i from 1 through $rows {
+    @for $j from 1 through $columns {
       $value: null;
       @each $m in $matrices {
         $entry: get-entry($m, ($i $j));

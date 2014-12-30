@@ -1,13 +1,9 @@
-// Checks whether `$coords` are valid coordinates
-// --------------------------------------------------------------------------------
-// @require `rows`
-// @require `columns`
-// --------------------------------------------------------------------------------
-// @param $matrix: matrix
-// @param $coords: coordinates
-// --------------------------------------------------------------------------------
-// @return boolean
-
+/// Checks whether `$coords` are valid coordinates
+/// @param $coords - coordinates
+/// @param {Matrix} $matrix (null) - matrix
+/// @return {Bool}
+/// @require {function} rows
+/// @require {function} columns
 @function _valid-coords($coords, $matrix: null) {
   @if length($coords) == 1 {
     $coords: ($coords, $coords);
