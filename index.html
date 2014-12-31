@@ -161,6 +161,29 @@
 
         
         
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="helpers-function"><a href="#helpers-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="_is-triangular" data-type="function">
+              <a href="#function-_is-triangular">_is-triangular
+              <span class="sidebar__annotation  sidebar__annotation--private">private</span>
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="_valid-coords" data-type="function">
+              <a href="#function-_valid-coords">_valid-coords
+              <span class="sidebar__annotation  sidebar__annotation--private">private</span>
+              
+              </a>
+            </li>
+            </ul>
+          
+        
         </div>
       
 
@@ -824,9 +847,24 @@ are set while all other entries are equal to 0</p>
 
 
   
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_is-triangular"><code>_is-triangular</code></a>
+        
+      </li>
+    
+  
 
 
 
+
+</ul>
 
 
   
@@ -1422,9 +1460,24 @@ are set while all other entries are equal to 0</p>
 
 
   
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_is-triangular"><code>_is-triangular</code></a>
+        
+      </li>
+    
+  
 
 
 
+
+</ul>
 
 
   
@@ -1890,18 +1943,29 @@ are set while all other entries are equal to 0</p>
 
 
   
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_valid-coords"><code>_valid-coords</code></a>
+        
+      </li>
+    
+  
 
 
 
+
+</ul>
 
 
   
     
     
-
-
-
-  
 
 
 
@@ -1931,6 +1995,24 @@ are set while all other entries are equal to 0</p>
 
     
 
+    <li><a href="#function-get-column"><code>get-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-_is-triangular"><code>_is-triangular</code></a></li>
+  
+
+
+
+  
+
+    
+
     <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
   
 
@@ -1941,15 +2023,6 @@ are set while all other entries are equal to 0</p>
     
 
     <li><a href="#function-transpose"><code>transpose</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-get-column"><code>get-column</code></a></li>
   
 
 
@@ -2237,6 +2310,612 @@ are set while all other entries are equal to 0</p>
 
           
           
+            <section class="main__sub-section" id="helpers-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-_is-triangular">
+
+<h3 class="item__heading">
+  
+    <span class="item__access">[private]</span>
+  
+
+  <a class="item__name" href="#function-_is-triangular">_is-triangular</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function _is-triangular($matrix, $side: top) - side (top | bottom, $flag: null) - advanced options (null | strict | unit | atom) { 
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      $entry: get-entry($matrix, ($i $j));
+      @if $i &gt; $j {
+        @if $side == top and $entry != 0 { @return false; }
+      }
+      @else if $i &lt; $j {
+        @if $side == bottom and $entry != 0 { @return false; }
+      }
+      @else {
+        @if $flag == strict and $entry != 0 { @return false; }
+        @if $flag == unit and $entry != 1 { @return false; }
+      }
+    }
+  }
+  @return true;
+ }"
+    data-collapsed="@function _is-triangular($matrix, $side: top) - side (top | bottom, $flag: null) - advanced options (null | strict | unit | atom) { ... }"><code>@function _is-triangular($matrix, $side: top) - side (top | bottom, $flag: null) - advanced options (null | strict | unit | atom) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/helpers/_is-triangular.scss#L11-L28" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether <code>$matrix</code> is <code>$side</code> triangular with <code>$flag</code> options</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$side</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            <code>top) - side (top | bottom</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$flag</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String, Null
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null) - advanced options (null | strict | unit | atom</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-is-lower-triangular"><code>is-lower-triangular</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-upper-triangular"><code>is-upper-triangular</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-_valid-coords">
+
+<h3 class="item__heading">
+  
+    <span class="item__access">[private]</span>
+  
+
+  <a class="item__name" href="#function-_valid-coords">_valid-coords</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function _valid-coords($coords, $matrix: null) { 
+  @if length($coords) == 1 {
+    $coords: ($coords, $coords);
+  }
+
+  $x: nth($coords, 1);
+  $y: nth($coords, 2);
+
+  @if length($coords) != 2 {
+    @warn &quot;Wrong number of coordinates.&quot;;
+    @return false;
+  }
+
+  @if type-of($x) != number or type-of($y) != number {
+    @warn &quot;Invalid coordinates.&quot;;
+    @return false;
+  }
+
+  @if $matrix {
+    @if abs($x) &gt; rows($matrix) or abs($y) &gt; columns($matrix) {
+      @warn &quot;Out of bound coordinates.&quot;;
+      @return false;
+    }
+  }
+
+  @return true;
+ }"
+    data-collapsed="@function _valid-coords($coords, $matrix: null) { ... }"><code>@function _valid-coords($coords, $matrix: null) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/helpers/_valid-coords.scss#L9-L35" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether <code>$coords</code> are valid coordinates</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$coords</code></th>
+          <td data-label="desc"><p>coordinates</p>
+</td>
+          <td data-label="type">
+          
+            
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-unit-matrix"><code>unit-matrix</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-matrix"><code>matrix</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-entry"><code>set-entry</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-entry"><code>get-entry</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-entries"><code>swap-entries</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
         
 
       </section>
@@ -2425,9 +3104,24 @@ are set while all other entries are equal to 0</p>
 
 
   
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_valid-coords"><code>_valid-coords</code></a>
+        
+      </li>
+    
+  
 
 
 
+
+</ul>
 
 
   
@@ -2656,14 +3350,23 @@ are set while all other entries are equal to 0</p>
 
 
   
-
-
-
-  
     
       
       <h3 class="item__sub-heading">Requires</h3>
       <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_valid-coords"><code>_valid-coords</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
     
 
     
@@ -3126,14 +3829,6 @@ are set while all other entries are equal to 0</p>
 
   
 
-
-
-  
-
-
-
-  
-
     
       
       <h3 class="item__sub-heading">Used by</h3>
@@ -3167,42 +3862,6 @@ are set while all other entries are equal to 0</p>
 
     
 
-    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-transpose"><code>transpose</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-get-column"><code>get-column</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
-  
-
-
-
-  
-
-    
-
     <li><a href="#function-set-column"><code>set-column</code></a></li>
   
 
@@ -3222,6 +3881,60 @@ are set while all other entries are equal to 0</p>
     
 
     <li><a href="#function-set-row"><code>set-row</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-column"><code>get-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-_is-triangular"><code>_is-triangular</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-_valid-coords"><code>_valid-coords</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
   
 
 
@@ -3575,14 +4288,6 @@ are set while all other entries are equal to 0</p>
 
   
 
-
-
-  
-
-
-
-  
-
     
       
       <h3 class="item__sub-heading">Used by</h3>
@@ -3616,7 +4321,7 @@ are set while all other entries are equal to 0</p>
 
     
 
-    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+    <li><a href="#function-set-column"><code>set-column</code></a></li>
   
 
 
@@ -3625,7 +4330,16 @@ are set while all other entries are equal to 0</p>
 
     
 
-    <li><a href="#function-transpose"><code>transpose</code></a></li>
+    <li><a href="#function-add-column"><code>add-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-row"><code>set-row</code></a></li>
   
 
 
@@ -3652,6 +4366,42 @@ are set while all other entries are equal to 0</p>
 
     
 
+    <li><a href="#function-_is-triangular"><code>_is-triangular</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-_valid-coords"><code>_valid-coords</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
     <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
   
 
@@ -3662,33 +4412,6 @@ are set while all other entries are equal to 0</p>
     
 
     <li><a href="#function-swap-rows"><code>swap-rows</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-add-column"><code>add-column</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-set-column"><code>set-column</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-set-row"><code>set-row</code></a></li>
   
 
 
@@ -5224,9 +5947,24 @@ are set while all other entries are equal to 0</p>
 
 
   
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_valid-coords"><code>_valid-coords</code></a>
+        
+      </li>
+    
+  
 
 
 
+
+</ul>
 
 
   
@@ -5244,6 +5982,15 @@ are set while all other entries are equal to 0</p>
     
 
     <li><a href="#function-unit-matrix"><code>unit-matrix</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-column"><code>set-column</code></a></li>
   
 
 
@@ -5280,15 +6027,6 @@ are set while all other entries are equal to 0</p>
     
 
     <li><a href="#function-swap-entries"><code>swap-entries</code></a></li>
-  
-
-
-
-  
-
-    
-
-    <li><a href="#function-set-column"><code>set-column</code></a></li>
   
 
 
@@ -6100,14 +6838,23 @@ are set while all other entries are equal to 0</p>
 
 
   
-
-
-
-  
     
       
       <h3 class="item__sub-heading">Requires</h3>
       <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-_valid-coords"><code>_valid-coords</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
     
 
     
