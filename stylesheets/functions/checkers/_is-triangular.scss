@@ -1,9 +1,9 @@
 /// Checks whether `$matrix` is `$side` triangular with `$flag` options
 /// @access private
-/// @group helpers
+/// @group checkers
 /// @param {Matrix} $matrix - matrix
-/// @param {String} $side (top) - side (top | bottom)
-/// @param {String | Null} $flag (null) - advanced options (null | strict | unit | atom)
+/// @param {String} $side (top) - side either `top` or `bottom`
+/// @param {String | Null} $flag (null) - advanced option, either `null` or `strict` or `unit` or `atom`
 /// @return {Bool}
 /// @require {function} rows
 /// @require {function} columns

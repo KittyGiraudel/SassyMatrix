@@ -1,7 +1,7 @@
 /// Checks whether `$matrix` is lower triangular with `$flag` option
 /// @group checkers
 /// @param {Matrix} $matrix - matrix
-/// @param {String | Null} $flag (null) - advanced option (`null` | `strict` | `unit` | `atom`)
+/// @param {String | Null} $flag (null) - advanced option, either `null` or `strict` or `unit` or `atom`
 /// @return {Bool}
 /// @require {function} _is-triangular
 @function is-lower-triangular($matrix, $flag: null) {
