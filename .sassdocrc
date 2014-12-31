@@ -1,0 +1,17 @@
+basePath: "https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets"
+display:
+    access: ["public"]
+    alias: false
+    watermark: true
+
+package: "./package.json"
+theme: "default"
+groups:
+    undefined: "General"
+    getters: "Getters"
+    setters: "Setters"
+    misc: "Miscellaneous"
+    swap: "Swap"
+    init: "Initialization"
+    checkers: "Checkers"
+    helpers: "Helpers"
