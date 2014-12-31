@@ -1,6 +1,6 @@
 basePath: "https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets"
 display:
-    access: ["public"]
+    access: ["public", "private"]
     alias: false
     watermark: true
 
