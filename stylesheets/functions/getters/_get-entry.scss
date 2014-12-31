@@ -1,4 +1,5 @@
 /// Returns entry at `$matrix[$coords[1], $coords[2]]`
+/// @group getters
 /// @param {Matrix} $matrix - matrix
 /// @param $coords - (x y) coordinates
 /// @return {*}

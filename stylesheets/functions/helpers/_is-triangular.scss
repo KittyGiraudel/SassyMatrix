@@ -1,4 +1,6 @@
 /// Checks whether `$matrix` is `$side` triangular with `$flag` options
+/// @access private
+/// @group helpers
 /// @param {Matrix} $matrix - matrix
 /// @param {String} $side (top) - side (top | bottom)
 /// @param {String | Null} $flag (null) - advanced options (null | strict | unit | atom)

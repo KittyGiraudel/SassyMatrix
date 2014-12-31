@@ -1,4 +1,5 @@
 /// Returns the visual representation of `$matrix` as a string
+/// @group misc
 /// @param {Matrix} $matrix - matrix to display
 /// @return {String}
 @function display($matrix) {
@@ -14,8 +15,10 @@
 }
 
 /// Mixin displaying the matrix using body pseudo-elements
+/// @group misc
 /// @param {Matrix} $matrix - matrix to display
 /// @param {String} $pseudo (before) - pseudo element to use
+/// @require {function} display
 @mixin display($matrix, $pseudo: before) {
   body:#{$pseudo} {
     content: display($matrix)                 !important;

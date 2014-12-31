@@ -1,4 +1,5 @@
 /// Assign `$value` at `$matrix[$coords[1], $coords[2]]`
+/// @group setters
 /// @param {Matrix} $matrix - matrix to update
 /// @param {List} $coords - (x y) coordinates
 /// @param {*} $value - value to assign at $matrix[$x, $y]

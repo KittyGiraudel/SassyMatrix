@@ -1,4 +1,5 @@
 /// Checks whether `$matrix` is upper triangular with `$flag` option
+/// @group checkers
 /// @param {Matrix} $matrix - matrix
 /// @param {String | Null} $flag (null) - advanced option (`null` | `strict` | `unit` | `atom`)
 /// @return {Bool}

@@ -1,4 +1,5 @@
 /// Add a new `$column` to `$matrix` at `$index`
+/// @group setters
 /// @param {Matrix} $matrix - matrix
 /// @param {List} $column (()) - column to add
 /// @param {Number | Null} $index (null) - index to add column at

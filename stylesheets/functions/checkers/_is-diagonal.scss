@@ -1,5 +1,6 @@
 /// Checks whether all entries from the main diagonal of `$matrix`
 /// are set while all other entries are equal to 0
+/// @group checkers
 /// @param {Matrix} $matrix - matrix
 /// @return {Bool}
 /// @require {function} get-entry
