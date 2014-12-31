@@ -1,0 +1,6487 @@
+<!doctype html>
+
+
+
+
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+
+<title>SassyMatrix - v0.0.1</title>
+<link rel="stylesheet" href="assets/css/main.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width">
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
+
+<!-- Thanks to Sass-lang.com for the icons -->
+<link href="http://sass-lang.com/favicon.ico" rel="shortcut icon">
+
+</head>
+<body>
+
+  
+  <aside class="sidebar" role="nav">
+    
+  <div class="sidebar__header">
+  <h1 class="sidebar__title">
+    
+      <a href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix - v0.0.1</a>
+    
+  </h1>
+</div>
+
+<div class="sidebar__body">
+  
+  
+    <button type="button" class="btn-toggle  js-btn-toggle" data-alt="Open all">Close all</button>
+
+    
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="checkers"><a href="#checkers">Checkers</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="checkers-function"><a href="#checkers-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="is-diagonal" data-type="function">
+              <a href="#function-is-diagonal">is-diagonal
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="is-lower-triangular" data-type="function">
+              <a href="#function-is-lower-triangular">is-lower-triangular
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="is-numeric" data-type="function">
+              <a href="#function-is-numeric">is-numeric
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="is-square" data-type="function">
+              <a href="#function-is-square">is-square
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="is-upper-triangular" data-type="function">
+              <a href="#function-is-upper-triangular">is-upper-triangular
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="getters"><a href="#getters">Getters</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="getters-function"><a href="#getters-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="get-column" data-type="function">
+              <a href="#function-get-column">get-column
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="get-entry" data-type="function">
+              <a href="#function-get-entry">get-entry
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="get-row" data-type="function">
+              <a href="#function-get-row">get-row
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="helpers"><a href="#helpers">Helpers</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="init"><a href="#init">Initialization</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="init-function"><a href="#init-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="matrix" data-type="function">
+              <a href="#function-matrix">matrix
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="unit-matrix" data-type="function">
+              <a href="#function-unit-matrix">unit-matrix
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="misc"><a href="#misc">Miscellaneous</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="misc-function"><a href="#misc-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="add-matrices" data-type="function">
+              <a href="#function-add-matrices">add-matrices
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="columns" data-type="function">
+              <a href="#function-columns">columns
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="display" data-type="function">
+              <a href="#function-display">display
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="rows" data-type="function">
+              <a href="#function-rows">rows
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="transpose" data-type="function">
+              <a href="#function-transpose">transpose
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        
+      
+        
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="misc-mixin"><a href="#misc-mixin">mixins</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="display" data-type="mixin">
+              <a href="#mixin-display">display
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="setters"><a href="#setters">Setters</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="setters-function"><a href="#setters-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="add-column" data-type="function">
+              <a href="#function-add-column">add-column
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="add-row" data-type="function">
+              <a href="#function-add-row">add-row
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="set-column" data-type="function">
+              <a href="#function-set-column">set-column
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="set-entry" data-type="function">
+              <a href="#function-set-entry">set-entry
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="set-row" data-type="function">
+              <a href="#function-set-row">set-row
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+      <p class="sidebar__item  sidebar__item--heading" data-slug="swap"><a href="#swap">Swap</a></p>
+
+      
+      
+        <div>
+
+        
+        
+
+        
+        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="swap-function"><a href="#swap-function">functions</a></p>
+
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="swap-columns" data-type="function">
+              <a href="#function-swap-columns">swap-columns
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="swap-entries" data-type="function">
+              <a href="#function-swap-entries">swap-entries
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="swap-rows" data-type="function">
+              <a href="#function-swap-rows">swap-rows
+              
+              
+              </a>
+            </li>
+            </ul>
+          
+        
+        </div>
+      
+
+    
+  
+</div>
+
+
+  </aside>
+
+  
+  <article class="main" role="main">
+
+    
+    <header class="header" role="banner">
+  <div class="container">
+  
+    <div class="header__description">
+      <p>All you ever wanted to deal with matrices in Sass.</p>
+
+    </div>
+  
+
+    <div class="sassdoc__searchbar  searchbar">
+       <label for="js-search-input" class="visually-hidden">Search</label>
+       <div class="searchbar__form" id="js-search">
+         <input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search" />
+         <ul class="searchbar__suggestions" id="js-search-suggestions"></ul>
+       </div>
+     </div>
+  </div>
+</header>
+
+
+    <div class="container">
+    
+
+  
+  
+
+    
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="checkers">Checkers</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="checkers-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-is-diagonal">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-is-diagonal">is-diagonal</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function is-diagonal($matrix) { 
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      $entry: get-entry($matrix, ($i $j));
+      @if ($i != $j and $entry != 0) or ($i == $j and $entry == 0) {
+        @return false;
+      }
+    }
+  }
+
+  @return true;
+ }"
+    data-collapsed="@function is-diagonal($matrix) { ... }"><code>@function is-diagonal($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/checkers/_is-diagonal.scss#L9-L20" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether all entries from the main diagonal of <code>$matrix</code>
+are set while all other entries are equal to 0</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-is-lower-triangular">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-is-lower-triangular">is-lower-triangular</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function is-lower-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { 
+  @return _is-triangular($matrix, bottom, $flag);
+ }"
+    data-collapsed="@function is-lower-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { ... }"><code>@function is-lower-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/checkers/_is-lower-triangular.scss#L7-L9" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether <code>$matrix</code> is lower triangular with <code>$flag</code> option</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$flag</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String, Null
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null) - advanced option (`null` | `strict` | `unit` | `atom`</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-is-numeric">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-is-numeric">is-numeric</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function is-numeric($matrix) { 
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      @if type-of(get-entry($matrix, ($i $j))) != &quot;number&quot; {
+        @return false;
+      }
+    }
+  }
+  @return true;
+ }"
+    data-collapsed="@function is-numeric($matrix) { ... }"><code>@function is-numeric($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/checkers/_is-numeric.scss#L8-L17" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether all entries from <code>$matrix</code> are numeric</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-is-square">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-is-square">is-square</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function is-square($matrix) { 
+  @return columns($matrix) == rows($matrix);
+ }"
+    data-collapsed="@function is-square($matrix) { ... }"><code>@function is-square($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/checkers/_is-square.scss#L7-L9" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Returns whether <code>$matrix</code> has as many rows as columns</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-is-upper-triangular">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-is-upper-triangular">is-upper-triangular</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function is-upper-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { 
+  @return _is-triangular($matrix, top, $flag);
+ }"
+    data-collapsed="@function is-upper-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { ... }"><code>@function is-upper-triangular($matrix, $flag: null) - advanced option (`null` | `strict` | `unit` | `atom`) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/checkers/_is-upper-triangular.scss#L7-L9" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Checks whether <code>$matrix</code> is upper triangular with <code>$flag</code> option</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$flag</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String, Null
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null) - advanced option (`null` | `strict` | `unit` | `atom`</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Bool
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="getters">Getters</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="getters-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-get-column">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-get-column">get-column</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function get-column($matrix, $index) { 
+  @if type-of($index) != number {
+    @warn &quot;Invalid column index.&quot;;
+    @return false;
+  }
+
+  @if abs($index) &gt; columns($matrix) {
+    @warn &quot;Out of bound column index.&quot;;
+    @return false;
+  }
+
+  $column: ();
+  @for $i from 1 through rows($matrix) {
+    $column: append($column, get-entry($matrix, ($i $index)))
+  }
+
+  @return $column;
+ }"
+    data-collapsed="@function get-column($matrix, $index) { ... }"><code>@function get-column($matrix, $index) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/getters/_get-column.scss#L9-L26" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Return column at <code>$index</code> from <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    List
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-get-entry">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-get-entry">get-entry</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function get-entry($matrix, $coords) { 
+  @if length($coords) == 1 {
+    $coords: ($coords $coords);
+  }
+
+  @if _valid-coords($coords, $matrix) {
+    @return nth(nth($matrix, nth($coords, 1)), nth($coords, 2));
+  }
+
+  @return false;
+ }"
+    data-collapsed="@function get-entry($matrix, $coords) { ... }"><code>@function get-entry($matrix, $coords) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/getters/_get-entry.scss#L7-L17" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Returns entry at <code>$matrix[$coords[1], $coords[2]]</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$coords</code></th>
+          <td data-label="desc"><p>(x y) coordinates</p>
+</td>
+          <td data-label="type">
+          
+            
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Any
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-is-diagonal"><code>is-diagonal</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-numeric"><code>is-numeric</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-column"><code>get-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-entries"><code>swap-entries</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-get-row">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-get-row">get-row</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function get-row($matrix, $index) { 
+  @if type-of($index) != number {
+    @warn &quot;Invalid row index.&quot;;
+    @return false;
+  }
+
+  @if abs($index) &gt; rows($matrix) {
+    @warn &quot;Out of bound row index.&quot;;
+    @return false;
+  }
+
+  @return nth($matrix, $index);
+ }"
+    data-collapsed="@function get-row($matrix, $index) { ... }"><code>@function get-row($matrix, $index) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/getters/_get-row.scss#L7-L19" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Return row at <code>$index</code> from <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    List
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="helpers">Helpers</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="init">Initialization</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="init-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-matrix">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-matrix">matrix</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function matrix($x, $y: $x) { 
+  @if _valid-coords(($x $y)) {
+    $matrix: ();
+
+    @for $i from 1 through $x {
+      $tmp: ();
+
+      @for $y from 1 through $y {
+        $tmp: append($tmp, 0)
+      }
+
+      $matrix: append($matrix, $tmp);
+    }
+
+    @return $matrix;
+  }
+
+  @return false;
+ }"
+    data-collapsed="@function matrix($x, $y: $x) { ... }"><code>@function matrix($x, $y: $x) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/init/_matrix.scss#L7-L25" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Initializing a matrix of <code>$x</code> by <code>$y</code> with 0s</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$x</code></th>
+          <td data-label="desc"><p>number of rows</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$y</code></th>
+          <td data-label="desc"><p>number of columns</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            <code>$x</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-unit-matrix"><code>unit-matrix</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-unit-matrix">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-unit-matrix">unit-matrix</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function unit-matrix($x, $y: $x) { 
+  @if _valid-coords(($x $y)) {
+    $matrix: matrix($x, $y);
+
+    @for $i from 1 through $x {
+      @for $j from 1 through $y {
+        @if $i == $j {
+          $matrix: set-entry($matrix, ($i $j), 1);
+        }
+      }
+    }
+
+    @return $matrix;
+  }
+
+  @return false;
+ }"
+    data-collapsed="@function unit-matrix($x, $y: $x) { ... }"><code>@function unit-matrix($x, $y: $x) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/init/_unit-matrix.scss#L9-L25" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Initializing a matrix of <code>$x</code> by <code>$y</code> with its diagonal filled with 1s</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$x</code></th>
+          <td data-label="desc"><p>number of rows</p>
+</td>
+          <td data-label="type">
+          
+            
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$y</code></th>
+          <td data-label="desc"><p>number of columns</p>
+</td>
+          <td data-label="type">
+          
+            
+          
+          </td>
+          <td data-label="default">
+          
+            <code>$x</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-matrix"><code>matrix</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="misc">Miscellaneous</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="misc-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-add-matrices">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-add-matrices">add-matrices</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function add-matrices($matrices...) { 
+  $matrix: nth($matrices, 1);
+  $rows: rows($matrix);
+  $columns: columns($matrix);
+
+  @each $m in $matrices {
+    @if $columns != columns($m) or $rows != rows($m) {
+      @warn &quot;All matrices do not have same dimensions.&quot;;
+      @return false;
+    }
+  }
+
+  @for $i from 1 through $rows {
+    @for $j from 1 through $columns {
+      $value: null;
+      @each $m in $matrices {
+        $entry: get-entry($m, ($i $j));
+        $value: if($value == null, $entry, $value + $entry);
+      }
+      $matrix: set-entry($matrix, ($i $j), $value);
+    }
+  }
+  @return $matrix;
+ }"
+    data-collapsed="@function add-matrices($matrices...) { ... }"><code>@function add-matrices($matrices...) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_add-matrices.scss#L9-L32" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Add <code>$matrices</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrices</code></th>
+          <td data-label="desc"><p>matrices</p>
+</td>
+          <td data-label="type">
+          
+            Arglist
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-columns">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-columns">columns</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function columns($matrix) { 
+  @return length(nth($matrix, 1));
+ }"
+    data-collapsed="@function columns($matrix) { ... }"><code>@function columns($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_columns.scss#L5-L7" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Returns number of columns in <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Number
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-is-diagonal"><code>is-diagonal</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-numeric"><code>is-numeric</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-square"><code>is-square</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-column"><code>get-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-column"><code>set-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-row"><code>add-row</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-row"><code>set-row</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-display">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-display">display</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function display($matrix) { 
+  $str: &quot;&quot;;
+  @each $line in $matrix {
+    $tmp: &quot;&quot;;
+    @each $item in $line {
+      $tmp: $tmp + &quot; &quot; + $item;
+    }
+    $str: $str + $tmp + &quot;\A &quot;;
+  }
+  @return $str;
+ }"
+    data-collapsed="@function display($matrix) { ... }"><code>@function display($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_display.scss#L5-L15" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Returns the visual representation of <code>$matrix</code> as a string</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix to display</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    String
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#mixin-display"><code>display</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-rows">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-rows">rows</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function rows($matrix) { 
+  @return length($matrix);
+ }"
+    data-collapsed="@function rows($matrix) { ... }"><code>@function rows($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_rows.scss#L5-L7" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Returns number of rows in <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Number
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-is-diagonal"><code>is-diagonal</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-numeric"><code>is-numeric</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-is-square"><code>is-square</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-column"><code>get-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-get-row"><code>get-row</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-rows"><code>swap-rows</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-column"><code>add-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-column"><code>set-column</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-row"><code>set-row</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-transpose">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-transpose">transpose</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function transpose($matrix) { 
+  $new-matrix: matrix(columns($matrix), rows($matrix));
+  @for $i from 1 through rows($matrix) {
+    @for $j from 1 through columns($matrix) {
+      $entry: get-entry($matrix, ($i $j));
+      $new-matrix: set-entry($new-matrix, ($j $i), $entry);
+    }
+  }
+  @return $new-matrix;
+ }"
+    data-collapsed="@function transpose($matrix) { ... }"><code>@function transpose($matrix) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_transpose.scss#L10-L19" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Translate <code>$matrix</code> on its diagonal axe</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-matrix"><code>matrix</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="misc-mixin">
+              <h2 class="main__heading--secondary">mixins</h2>
+
+              
+              
+                <section class="main__item  item" id="mixin-display">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-display">display</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@mixin display($matrix, $pseudo: before) { 
+  body:#{$pseudo} {
+    content: display($matrix)                 !important;
+
+    display: block                            !important;
+    margin: 1em                               !important;
+    padding: .5em                             !important;
+
+    background: #EFEFEF                       !important;
+    border: 1px solid #DDD                    !important;
+    border-radius: .2em                       !important;
+
+    color: #333                               !important;
+    font: 1.5em/1.5 &quot;Courier New&quot;, monospace  !important;
+    text-shadow: 0 1px white                  !important;
+    white-space: pre-wrap                     !important;
+  }
+ }"
+    data-collapsed="@mixin display($matrix, $pseudo: before) { ... }"><code>@mixin display($matrix, $pseudo: before) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/misc/_display.scss#L22-L39" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Mixin displaying the matrix using body pseudo-elements</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix to display</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$pseudo</code></th>
+          <td data-label="desc"><p>pseudo element to use</p>
+</td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            <code>before</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-display"><code>display</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="setters">Setters</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="setters-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-add-column">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-add-column">add-column</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function add-column($matrix, $column: (), $index: null) { 
+  $desired-length: rows($matrix);
+
+  @if length($column) == 0 {
+    @for $i from 1 through $desired-length {
+      $column: append($column, 0);
+    }
+  }
+
+  @if length($column) != $desired-length {
+    @warn &quot;Wrong length for new column; should be #{$desired-length}.&quot;;
+    @return false;
+  }
+
+  @for $i from 1 through $desired-length {
+    $matrix: set-nth($matrix, $i, append(nth($matrix, $i), nth($column, $i)));
+  }
+
+  @if $index != null {
+    $matrix: swap-columns($matrix, -1, $index);
+  }
+
+  @return $matrix;
+ }"
+    data-collapsed="@function add-column($matrix, $column: (), $index: null) { ... }"><code>@function add-column($matrix, $column: (), $index: null) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/setters/_add-column.scss#L9-L32" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Add a new <code>$column</code> to <code>$matrix</code> at <code>$index</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$column</code></th>
+          <td data-label="desc"><p>column to add</p>
+</td>
+          <td data-label="type">
+          
+            List
+          
+          </td>
+          <td data-label="default">
+          
+            <code>()</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index to add column at</p>
+</td>
+          <td data-label="type">
+          
+            Number, Null
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-swap-columns"><code>swap-columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-add-row">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-add-row">add-row</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function add-row($matrix, $row: (), $index: null) { 
+  $desired-length: columns($matrix);
+
+  @if $row == () {
+    @for $i from 1 through $desired-length {
+      $row: append($row, 0);
+    }
+  }
+
+  @if length($row) != $desired-length {
+    @warn &quot;Wrong length for new row; should be #{$desired-length}.&quot;;
+    @return false;
+  }
+
+  $matrix: append($matrix, $row);
+
+  @if $index != null {
+    $matrix: swap-rows($matrix, -1, $index);
+  }
+
+  @return $matrix;
+ }"
+    data-collapsed="@function add-row($matrix, $row: (), $index: null) { ... }"><code>@function add-row($matrix, $row: (), $index: null) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/setters/_add-row.scss#L9-L30" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Add a new <code>$row</code> to <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$row</code></th>
+          <td data-label="desc"><p>row to add</p>
+</td>
+          <td data-label="type">
+          
+            List
+          
+          </td>
+          <td data-label="default">
+          
+            <code>()</code>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index to add row at</p>
+</td>
+          <td data-label="type">
+          
+            Number, Null
+          
+          </td>
+          <td data-label="default">
+          
+            <code>null</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-swap-rows"><code>swap-rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-set-column">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-set-column">set-column</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function set-column($matrix, $index, $column: ()) { 
+  $desired-length: rows($matrix);
+
+  @if type-of($index) != &quot;number&quot; {
+    @warn &quot;Invalid column index.&quot;;
+    @return false;
+  }
+
+  @if abs($index) &gt; columns($matrix) {
+    @warn &quot;Out of bound column index.&quot;;
+    @return false;
+  }
+
+  @if $column == () {
+    @for $i from 1 through $desired-length {
+      $column: append($column, 0);
+    }
+  }
+
+  @if length($column) != $desired-length {
+    @warn &quot;Wrong length for new column; should be #{$desired-length}.&quot;;
+    @return false;
+  }
+
+  @for $i from 1 through $desired-length {
+    $matrix: set-entry($matrix, $i $index, nth($column, $i));
+  }
+
+  @return $matrix;
+ }"
+    data-collapsed="@function set-column($matrix, $index, $column: ()) { ... }"><code>@function set-column($matrix, $index, $column: ()) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/setters/_set-column.scss#L10-L39" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Set <code>$column</code> at <code>$index</code> in <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$column</code></th>
+          <td data-label="desc"><p>column</p>
+</td>
+          <td data-label="type">
+          
+            List
+          
+          </td>
+          <td data-label="default">
+          
+            <code>()</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-set-entry">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-set-entry">set-entry</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function set-entry($matrix, $coords, $value) { 
+  @if length($coords) == 1 {
+    $coords: ($coords $coords);
+  }
+
+  @if _valid-coords($coords, $matrix) {
+    @return set-nth($matrix, nth($coords, 1), set-nth(nth($matrix, nth($coords, 1)), nth($coords, 2), $value));
+  }
+
+  @return false;
+ }"
+    data-collapsed="@function set-entry($matrix, $coords, $value) { ... }"><code>@function set-entry($matrix, $coords, $value) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/setters/_set-entry.scss#L8-L18" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Assign <code>$value</code> at <code>$matrix[$coords[1], $coords[2]]</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix to update</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$coords</code></th>
+          <td data-label="desc"><p>(x y) coordinates</p>
+</td>
+          <td data-label="type">
+          
+            List
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$value</code></th>
+          <td data-label="desc"><p>value to assign at $matrix[$x, $y]</p>
+</td>
+          <td data-label="type">
+          
+            Any
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-unit-matrix"><code>unit-matrix</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-add-matrices"><code>add-matrices</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-transpose"><code>transpose</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-columns"><code>swap-columns</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-swap-entries"><code>swap-entries</code></a></li>
+  
+
+
+
+  
+
+    
+
+    <li><a href="#function-set-column"><code>set-column</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-set-row">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-set-row">set-row</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function set-row($matrix, $index, $row: ()) { 
+  $desired-length: columns($matrix);
+
+  @if type-of($index) != &quot;number&quot; {
+    @warn &quot;Invalid row index.&quot;;
+    @return false;
+  }
+
+  @if abs($index) &gt; rows($matrix) {
+    @warn &quot;Out of bound row index.&quot;;
+    @return false;
+  }
+
+  @if $row == () {
+    @for $i from 1 through $desired-length {
+      $row: append($row, 0);
+    }
+  }
+
+  @if length($row) != $desired-length {
+    @warn &quot;Wrong length for new row; should be #{$desired-length}.&quot;;
+    @return false;
+  }
+
+  @return set-nth($matrix, $index, $row);
+ }"
+    data-collapsed="@function set-row($matrix, $index, $row: ()) { ... }"><code>@function set-row($matrix, $index, $row: ()) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/setters/_set-row.scss#L9-L34" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Set <code>$row</code> at <code>$index</code> in <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$index</code></th>
+          <td data-label="desc"><p>index</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$row</code></th>
+          <td data-label="desc"><p>row</p>
+</td>
+          <td data-label="type">
+          
+            List
+          
+          </td>
+          <td data-label="default">
+          
+            <code>()</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+      <section class="main__section">
+        <h1 class="main__heading" id="swap">Swap</h1>
+
+        
+        
+
+          
+          
+
+          
+          
+            <section class="main__sub-section" id="swap-function">
+              <h2 class="main__heading--secondary">functions</h2>
+
+              
+              
+                <section class="main__item  item" id="function-swap-columns">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-swap-columns">swap-columns</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function swap-columns($matrix, $c1, $c2) { 
+  @if type-of($c1) != number or type-of($c2) != number {
+    @warn &quot;Invalid column index.&quot;;
+    @return false;
+  }
+
+  @if abs($c1) &gt; columns($matrix) or abs($c2) &gt; columns($matrix) {
+    @warn &quot;Out of bounds column index.&quot;;
+    @return false;
+  }
+
+  @for $i from 1 through rows($matrix) {
+    $tmp: get-entry($matrix, ($i $c1));
+    $matrix: set-entry($matrix, ($i $c1), get-entry($matrix, ($i $c2)));
+    $matrix: set-entry($matrix, ($i $c2), $tmp);
+  }
+
+  @return $matrix;
+ }"
+    data-collapsed="@function swap-columns($matrix, $c1, $c2) { ... }"><code>@function swap-columns($matrix, $c1, $c2) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/swap/_swap-columns.scss#L11-L29" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Swaps columns <code>$c1</code> and <code>$c2</code> from <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$c1</code></th>
+          <td data-label="desc"><p>index of column 1</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$c2</code></th>
+          <td data-label="desc"><p>index of column 2</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-columns"><code>columns</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-add-column"><code>add-column</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-swap-entries">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-swap-entries">swap-entries</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function swap-entries($matrix, $e1, $e2) { 
+  @if _valid-coords($e1, $matrix) and _valid-coords($e2, $matrix) {
+    $tmp: get-entry($matrix, $e1);
+    $matrix: set-entry(set-entry($matrix, $e1, get-entry($matrix, $e2)), $e2, $tmp);
+    @return $matrix;
+  }
+  @return false;
+ }"
+    data-collapsed="@function swap-entries($matrix, $e1, $e2) { ... }"><code>@function swap-entries($matrix, $e1, $e2) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/swap/_swap-entries.scss#L10-L17" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Swaps entries <code>$e1</code> and <code>$e2</code> from <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$e1</code></th>
+          <td data-label="desc"><p>(x y) coordinates of first entry</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$e2</code></th>
+          <td data-label="desc"><p>(x y) coordinates of second entry</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-get-entry"><code>get-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+  
+    
+
+    
+      <li>
+        <a href="#function-set-entry"><code>set-entry</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="function-swap-rows">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#function-swap-rows">swap-rows</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@function swap-rows($matrix, $r1, $r2) { 
+  @if type-of($r1) != &quot;number&quot; or type-of($r2) != &quot;number&quot; {
+    @warn &quot;Invalid row index.&quot;;
+    @return false;
+  }
+
+  @if abs($r1) &gt; rows($matrix) or abs($r2) &gt; rows($matrix) {
+    @warn &quot;Out of bounds row index.&quot;;
+    @return false;
+  }
+
+  $tmp: nth($matrix, $r1);
+  @return set-nth(set-nth($matrix, $r1, nth($matrix, $r2)), $r2, $tmp);
+ }"
+    data-collapsed="@function swap-rows($matrix, $r1, $r2) { ... }"><code>@function swap-rows($matrix, $r1, $r2) { ... }</code></pre>
+
+  
+    <a href="https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets/functions/swap/_swap-rows.scss#L8-L21" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Swaps rows <code>$r1</code> and <code>$r2</code> from <code>$matrix</code></p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$matrix</code></th>
+          <td data-label="desc"><p>matrix</p>
+</td>
+          <td data-label="type">
+          
+            Matrix
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$r1</code></th>
+          <td data-label="desc"><p>index of row 1</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$r2</code></th>
+          <td data-label="desc"><p>index of row 2</p>
+</td>
+          <td data-label="type">
+          
+            Number
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Returns</h3>
+
+  <p class="sassdoc__item-description">
+  
+    Matrix
+  
+  </p>
+
+
+  
+    
+    
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#function-rows"><code>rows</code></a>
+        
+      </li>
+    
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+  
+
+    
+      
+      <h3 class="item__sub-heading">Used by</h3>
+      <ul class="list-unstyled  list-inline">
+    
+
+    <li><a href="#function-add-row"><code>add-row</code></a></li>
+  
+
+
+
+
+</ul>
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
+          
+        
+
+      </section>
+    
+
+  
+
+
+    </div>
+
+    
+    
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      
+        <div class="footer__project-info  project-info">
+          <!-- Name and URL -->
+          
+            <a class="project-info__name" href="https://github.com/HugoGiraudel/SassyMatrix">SassyMatrix</a>
+          
+
+          <!-- Version -->
+          <span class="project-info__version"> - v0.0.1</span>
+
+          <!-- License -->
+          
+          <span class="project-info__license">, under
+            
+              MIT
+            
+            </span>
+          
+        </div>
+      
+
+      
+        <span class="footer__watermark">Built with <a href="https://github.com/SassDoc/sassdoc">SassDoc</a>.</span>
+      
+    </div>
+  </footer>
+
+
+  </article>
+
+
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="assets/js/main.min.js"></script>
+
+</body>
+</html>
