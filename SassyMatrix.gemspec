@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "SassyMatrix"
   s.description = %q{Sass API for matrices}
   s.summary = %q{SassyMatrix is a Sass-powered API for matrices.}
-  s.authors = ["Hugo Giraudel", "Fabrice Weinberg"]
-  s.email = ["hugo.giraudel@gmail.com", "fabrice@weinberg.me"]
-  s.homepage = "https://github.com/HugoGiraudel/SassyMatrix/"
+  s.authors = ["Kitty Giraudel", "Fabrice Weinberg"]
+  s.email = ["kitty.giraudel@gmail.com", "fabrice@weinberg.me"]
+  s.homepage = "https://github.com/KittyGiraudel/SassyMatrix/"
 
   # README file
   s.files = ["README.md"]
