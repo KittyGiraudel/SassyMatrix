@@ -1,4 +1,4 @@
-basePath: "https://github.com/HugoGiraudel/SassyMatrix/tree/master/stylesheets"
+basePath: "https://github.com/KittyGiraudel/SassyMatrix/tree/master/stylesheets"
 display:
     access: ["public", "private"]
     alias: false
