@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HugoGiraudel/SassyMatrix"
+    "url": "https://github.com/KittyGiraudel/SassyMatrix"
   },
   "keywords": [
     "Sass",
@@ -19,12 +19,12 @@
     "matrices",
     "scss"
   ],
-  "author": "Hugo Giraudel",
+  "author": "Kitty Giraudel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HugoGiraudel/SassyMatrix/issues"
+    "url": "https://github.com/KittyGiraudel/SassyMatrix/issues"
   },
-  "homepage": "https://github.com/HugoGiraudel/SassyMatrix",
+  "homepage": "https://github.com/KittyGiraudel/SassyMatrix",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-concat": "~0.3.0",
